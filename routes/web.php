@@ -12,6 +12,7 @@ use App\Http\Controllers\DeleteAllController;
 use App\Http\Controllers\AdminIndexController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\AjaxRequestController;
+use App\Http\Controllers\AMPController;
 use App\Http\Controllers\BlogCommentController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\HomeModelController;
@@ -69,6 +70,9 @@ Route::controller(StaticPageController::class)->name('frontend.')->group(functio
     Route::get('/terms-and-conditions', 'termsConditions')->name('termsConditions');
     Route::get('/privacy-policy', 'privacyPolicy')->name('privacyPolicy');
 });
+// Route::controller(AMPController::class)->name('frontend.')->group(function () {
+//     Route::get('/amp', 'ampPage')->name('ampPage');
+// });
 
 
 

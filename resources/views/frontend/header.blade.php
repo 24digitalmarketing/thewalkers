@@ -172,19 +172,16 @@
                             <div id="navbarSupportedContent"
                                 class="collapse navbar-collapse navbar-responsive-collapse">
                                 <ul class="nav navbar-nav">
-
-
                                     <li> <a href="{{ route('frontend.blog') }}">Blog</a> </li>
-
                                 </ul>
                             </div>
                         </div>
                     </nav>
-                    <div class="utf_nav_search"> <span id="search"><i class="fa fa-search"></i></span> </div>
+                    {{-- <div class="utf_nav_search"> <span id="search"><i class="fa fa-search"></i></span> </div>
                     <div class="utf_search_block" style="display: none;">
                         <input type="text" class="form-control" placeholder="Type what you want and enter">
                         <span class="utf_search_close">&times;</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
