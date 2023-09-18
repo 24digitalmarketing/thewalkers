@@ -50,8 +50,8 @@ Route::controller(AjaxRequestController::class)->name('frontend.')->group(functi
 Route::controller(BlogController::class)->name('frontend.')->group(function () {
     Route::get('/blog', 'index')->name('blog');
     Route::get('/blog/{slug}', 'blogDetails')->name('blogDetails');
+    Route::get('/blog/category/{slug}', 'blogCategory')->name('blogCategory');
 });
-
 
 Route::controller(ContactController::class)->name('frontend.')->group(function () {
     Route::get('/contact', 'index')->name('contact');

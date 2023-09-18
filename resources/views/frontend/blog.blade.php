@@ -1,16 +1,27 @@
 @extends('frontend.main')
 @section('main-sec')
+
+    @push('style')
+        <style>
+            .widget-tags ul>li {
+                float: none;
+            }
+        </style>
+    @endpush
     <!-- 1rd Block Wrapper Start -->
     <section class="utf_block_wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="block category-listing">
-                        <h3 class="utf_block_title"><span>Lifestyle News</span></h3>
 
                         <div class="row">
 
                             @if (count($blogData) > 0)
+                                <div class="col-12">
+                                    <h3 class="utf_block_title"><span>{{ getBlogCategoryName($blogData[0]->cat_id) }}</span>
+                                    </h3>
+                                </div>
                                 @foreach ($blogData as $single_blog)
                                     @php
                                         // media
@@ -23,10 +34,11 @@
                                                         title="{{ $blog_img['title'] }}" /> </a>
                                             </div>
                                             <a class="utf_post_cat"
-                                                href="#">{{ getBlogCategoryName($single_blog->cat_id) }}</a>
+                                                href="{{ route('frontend.blogCategory', getBlogCategorySlug($single_blog->cat_id)) }}">{{ getBlogCategoryName($single_blog->cat_id) }}</a>
                                             <div class="utf_post_content">
                                                 <h2 class="utf_post_title title-large"> <a
-                                                        href="#">{{ $single_blog->title }}</a> </h2>
+                                                        href="{{ route('frontend.blogDetails', $single_blog->slug) }}">{{ $single_blog->title }}</a>
+                                                </h2>
                                                 <div class="utf_post_meta"> <span class="utf_post_date"><i
                                                             class="fa fa-clock-o"></i>
                                                         {{ showDateTime($single_blog->created_at) }}</span> </div>
@@ -36,6 +48,10 @@
                                         </div>
                                     </div>
                                 @endforeach
+                            @else
+                                <div class="d-flex justify-content-center align-items-center py-5 w-100">
+                                    <strong style="font-size: 20px">Not Found</strong>
+                                </div>
                             @endif
 
                         </div>
@@ -57,6 +73,22 @@
                             </ul>
                         </div>
 
+                        <div class="widget widget-tags">
+                            <h3 class="utf_block_title"><span>Category</span></h3>
+                            <ul class="unstyled clearfix">
+                                @php
+                                    $category = DB::table('blog_category')
+                                        ->orderBy('cat_name', 'asc')
+                                        ->get();
+                                @endphp
+                                @if (count($category) > 0)
+                                    @foreach ($category as $single_category)
+                                        <li><a href="{{ route('frontend.blogCategory', $single_category->slug) }}">
+                                                {{ $single_category->cat_name }}</a></li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        </div>
                         <div class="widget color-default">
                             <h3 class="utf_block_title"><span>Popular News</span></h3>
                             <div class="utf_list_post_block">

@@ -27,7 +27,8 @@
                                     @endphp
                                     <div class="item" style="background-image:url({{ $sec_i_slider_img['src'] }})">
                                         <div class="utf_featured_post">
-                                            <div class="utf_post_content"> <a class="utf_post_cat" href="#">
+                                            <div class="utf_post_content"> <a class="utf_post_cat"
+                                                    href="{{ route('frontend.blogCategory', getBlogCategorySlug($sec_1_slider_data->cat_id)) }}">
                                                     @php
                                                         echo getBlogCategoryName($sec_1_slider_data->cat_id);
                                                     @endphp
@@ -54,11 +55,12 @@
                                     $sliderSectionItem1_img = getMediaUrl($sliderSectionItem1_blog_data->main_pic);
                                 @endphp
                                 <div class="utf_post_overaly_style text-center first clearfix">
-                                    <div class="utf_post_thumb"> <a href="#"><img class="img-fluid"
-                                                src="{{ $sliderSectionItem1_img['src'] }}"
-                                                alt="{{ $sliderSectionItem1_img['alt'] }}"
-                                                title="{{ $sliderSectionItem1_img['title'] }}" /></a> </div>
-                                    <div class="utf_post_content"> <a class="utf_post_cat" href="#">Lifestyle</a>
+                                    <div class="utf_post_thumb"> <img class="img-fluid"
+                                            src="{{ $sliderSectionItem1_img['src'] }}"
+                                            alt="{{ $sliderSectionItem1_img['alt'] }}"
+                                            title="{{ $sliderSectionItem1_img['title'] }}" /> </div>
+                                    <div class="utf_post_content"> <a class="utf_post_cat"
+                                            href="{{ route('frontend.blogCategory', getBlogCategorySlug($sliderSectionItem1_blog_data->cat_id)) }}">{{ getBlogCategoryName($sliderSectionItem1_blog_data->cat_id) }}</a>
                                         <h2 class="utf_post_title title-medium">
                                             <a
                                                 href="{{ route('frontend.blogDetails', $sliderSectionItem1_blog_data->slug) }}">{{ $sliderSectionItem1_blog_data->title }}
@@ -78,11 +80,12 @@
                                     $sliderSectionItem2_img = getMediaUrl($sliderSectionItem2_blog_data->main_pic);
                                 @endphp
                                 <div class="utf_post_overaly_style text-center first clearfix">
-                                    <div class="utf_post_thumb"> <a href="#"><img class="img-fluid"
-                                                src="{{ $sliderSectionItem2_img['src'] }}"
-                                                alt="{{ $sliderSectionItem2_img['alt'] }}"
-                                                title="{{ $sliderSectionItem2_img['title'] }}" /></a> </div>
-                                    <div class="utf_post_content"> <a class="utf_post_cat" href="#">Lifestyle</a>
+                                    <div class="utf_post_thumb"> <img class="img-fluid"
+                                            src="{{ $sliderSectionItem2_img['src'] }}"
+                                            alt="{{ $sliderSectionItem2_img['alt'] }}"
+                                            title="{{ $sliderSectionItem2_img['title'] }}" /> </div>
+                                    <div class="utf_post_content"> <a class="utf_post_cat"
+                                            href="{{ route('frontend.blogCategory', getBlogCategorySlug($sliderSectionItem2_blog_data->cat_id)) }}">{{ getBlogCategoryName($sliderSectionItem2_blog_data->cat_id) }}</a>
                                         <h2 class="utf_post_title title-medium">
                                             <a
                                                 href="{{ route('frontend.blogDetails', $sliderSectionItem2_blog_data->slug) }}">{{ $sliderSectionItem2_blog_data->title }}
@@ -137,11 +140,11 @@
                                         $section2_category1_blog_data_first_media = getMediaUrl($section2_category1_blog_data[0]->main_pic);
                                     @endphp
                                     <div class="utf_post_overaly_style clearfix">
-                                        <div class="utf_post_thumb"> <a href="#"> <img class="img-fluid"
-                                                    src="{{ $section2_category1_blog_data_first_media['src'] }}"
-                                                    alt="{{ $section2_category1_blog_data_first_media['alt'] }}"
-                                                    title="{{ $section2_category1_blog_data_first_media['title'] }}" />
-                                            </a>
+                                        <div class="utf_post_thumb"> <img class="img-fluid"
+                                                src="{{ $section2_category1_blog_data_first_media['src'] }}"
+                                                alt="{{ $section2_category1_blog_data_first_media['alt'] }}"
+                                                title="{{ $section2_category1_blog_data_first_media['title'] }}" />
+
                                         </div>
                                         <div class="utf_post_content">
                                             <h2 class="utf_post_title"> <a
@@ -164,12 +167,11 @@
                                                 @endphp
                                                 <li class="clearfix">
                                                     <div class="utf_post_block_style post-float clearfix">
-                                                        <div class="utf_post_thumb"> <a href="#"> <img
-                                                                    class="img-fluid"
-                                                                    src="{{ $section2_category1_blog_data_list_media['src'] }}"
-                                                                    alt="{{ $section2_category1_blog_data_list_media['alt'] }}"
-                                                                    title="{{ $section2_category1_blog_data_list_media['title'] }}" />
-                                                            </a> </div>
+                                                        <div class="utf_post_thumb"> <img class="img-fluid"
+                                                                src="{{ $section2_category1_blog_data_list_media['src'] }}"
+                                                                alt="{{ $section2_category1_blog_data_list_media['alt'] }}"
+                                                                title="{{ $section2_category1_blog_data_list_media['title'] }}" />
+                                                        </div>
                                                         <div class="utf_post_content">
                                                             <h2 class="utf_post_title title-small"> <a
                                                                     href="{{ route('frontend.blogDetails', $section2_category1_blog_data[$i]->slug) }}">
@@ -214,11 +216,11 @@
                                         $section2_category2_blog_data_first_media = getMediaUrl($section2_category2_blog_data[0]->main_pic);
                                     @endphp
                                     <div class="utf_post_overaly_style clearfix">
-                                        <div class="utf_post_thumb"> <a href="#"> <img class="img-fluid"
-                                                    src="{{ $section2_category2_blog_data_first_media['src'] }}"
-                                                    alt="{{ $section2_category2_blog_data_first_media['alt'] }}"
-                                                    title="{{ $section2_category2_blog_data_first_media['title'] }}" />
-                                            </a>
+                                        <div class="utf_post_thumb"> <img class="img-fluid"
+                                                src="{{ $section2_category2_blog_data_first_media['src'] }}"
+                                                alt="{{ $section2_category2_blog_data_first_media['alt'] }}"
+                                                title="{{ $section2_category2_blog_data_first_media['title'] }}" />
+
                                         </div>
                                         <div class="utf_post_content">
                                             <h2 class="utf_post_title"> <a
@@ -241,12 +243,11 @@
                                                 @endphp
                                                 <li class="clearfix">
                                                     <div class="utf_post_block_style post-float clearfix">
-                                                        <div class="utf_post_thumb"> <a href="#"> <img
-                                                                    class="img-fluid"
-                                                                    src="{{ $section2_category2_blog_data_list_media['src'] }}"
-                                                                    alt="{{ $section2_category2_blog_data_list_media['alt'] }}"
-                                                                    title="{{ $section2_category2_blog_data_list_media['title'] }}" />
-                                                            </a> </div>
+                                                        <div class="utf_post_thumb"> <img class="img-fluid"
+                                                                src="{{ $section2_category2_blog_data_list_media['src'] }}"
+                                                                alt="{{ $section2_category2_blog_data_list_media['alt'] }}"
+                                                                title="{{ $section2_category2_blog_data_list_media['title'] }}" />
+                                                        </div>
                                                         <div class="utf_post_content">
                                                             <h2 class="utf_post_title title-small"> <a
                                                                     href="{{ route('frontend.blogDetails', $section2_category2_blog_data[$i]->slug) }}">
@@ -292,11 +293,11 @@
                                         $section2_category3_blog_data_first_media = getMediaUrl($section2_category3_blog_data[0]->main_pic);
                                     @endphp
                                     <div class="utf_post_overaly_style clearfix">
-                                        <div class="utf_post_thumb"> <a href="#"> <img class="img-fluid"
-                                                    src="{{ $section2_category3_blog_data_first_media['src'] }}"
-                                                    alt="{{ $section2_category3_blog_data_first_media['alt'] }}"
-                                                    title="{{ $section2_category3_blog_data_first_media['title'] }}" />
-                                            </a>
+                                        <div class="utf_post_thumb"> <img class="img-fluid"
+                                                src="{{ $section2_category3_blog_data_first_media['src'] }}"
+                                                alt="{{ $section2_category3_blog_data_first_media['alt'] }}"
+                                                title="{{ $section2_category3_blog_data_first_media['title'] }}" />
+
                                         </div>
                                         <div class="utf_post_content">
                                             <h2 class="utf_post_title"> <a
@@ -319,12 +320,11 @@
                                                 @endphp
                                                 <li class="clearfix">
                                                     <div class="utf_post_block_style post-float clearfix">
-                                                        <div class="utf_post_thumb"> <a href="#"> <img
-                                                                    class="img-fluid"
-                                                                    src="{{ $section2_category3_blog_data_list_media['src'] }}"
-                                                                    alt="{{ $section2_category3_blog_data_list_media['alt'] }}"
-                                                                    title="{{ $section2_category3_blog_data_list_media['title'] }}" />
-                                                            </a> </div>
+                                                        <div class="utf_post_thumb"> <img class="img-fluid"
+                                                                src="{{ $section2_category3_blog_data_list_media['src'] }}"
+                                                                alt="{{ $section2_category3_blog_data_list_media['alt'] }}"
+                                                                title="{{ $section2_category3_blog_data_list_media['title'] }}" />
+                                                        </div>
                                                         <div class="utf_post_content">
                                                             <h2 class="utf_post_title title-small"> <a
                                                                     href="{{ route('frontend.blogDetails', $section2_category3_blog_data[$i]->slug) }}">
@@ -376,13 +376,13 @@
                     @endphp
                     <div class="col-md-4">
                         <div class="utf_post_overaly_style text-center first clearfix mb-3 mb-md-0">
-                            <div class="utf_post_thumb"> <a href="#"><img class="img-fluid"
-                                        src="{{ $section3_blog_1_data_img['src'] }}"
-                                        alt="{{ $section3_blog_1_data_img['alt'] }}"
-                                        title="{{ $section3_blog_1_data_img['title'] }}" /></a>
+                            <div class="utf_post_thumb"> <img class="img-fluid"
+                                    src="{{ $section3_blog_1_data_img['src'] }}"
+                                    alt="{{ $section3_blog_1_data_img['alt'] }}"
+                                    title="{{ $section3_blog_1_data_img['title'] }}" />
                             </div>
                             <div class="utf_post_content"> <a class="utf_post_cat"
-                                    href="#">{{ getBlogCategoryName($section3_blog_1_data->cat_id) }}</a>
+                                    href="{{ route('frontend.blogCategory', getBlogCategorySlug($section3_blog_1_data->cat_id)) }}">{{ getBlogCategoryName($section3_blog_1_data->cat_id) }}</a>
                                 <h2 class="utf_post_title"> <a
                                         href="{{ route('frontend.blogDetails', $section3_blog_1_data->slug) }}">{{ $section3_blog_1_data->title }}</a>
                                 </h2>
@@ -399,13 +399,13 @@
                     @endphp
                     <div class="col-md-4">
                         <div class="utf_post_overaly_style text-center first clearfix mb-3 mb-md-0">
-                            <div class="utf_post_thumb"> <a href="#"><img class="img-fluid"
-                                        src="{{ $section3_blog_3_data_img['src'] }}"
-                                        alt="{{ $section3_blog_3_data_img['alt'] }}"
-                                        title="{{ $section3_blog_3_data_img['title'] }}" /></a>
+                            <div class="utf_post_thumb"> <img class="img-fluid"
+                                    src="{{ $section3_blog_3_data_img['src'] }}"
+                                    alt="{{ $section3_blog_3_data_img['alt'] }}"
+                                    title="{{ $section3_blog_3_data_img['title'] }}" />
                             </div>
                             <div class="utf_post_content"> <a class="utf_post_cat"
-                                    href="#">{{ getBlogCategoryName($section3_blog_3_data->cat_id) }}</a>
+                                    href="{{ route('frontend.blogCategory', getBlogCategorySlug($section3_blog_3_data->cat_id)) }}">{{ getBlogCategoryName($section3_blog_3_data->cat_id) }}</a>
                                 <h2 class="utf_post_title"> <a
                                         href="{{ route('frontend.blogDetails', $section3_blog_3_data->slug) }}">{{ $section3_blog_3_data->title }}</a>
                                 </h2>
@@ -424,13 +424,13 @@
                     @endphp
                     <div class="col-md-4">
                         <div class="utf_post_overaly_style text-center first clearfix mb-3 mb-md-0">
-                            <div class="utf_post_thumb"> <a href="#"><img class="img-fluid"
-                                        src="{{ $section3_blog_3_data_img['src'] }}"
-                                        alt="{{ $section3_blog_3_data_img['alt'] }}"
-                                        title="{{ $section3_blog_3_data_img['title'] }}" /></a>
+                            <div class="utf_post_thumb"> <img class="img-fluid"
+                                    src="{{ $section3_blog_3_data_img['src'] }}"
+                                    alt="{{ $section3_blog_3_data_img['alt'] }}"
+                                    title="{{ $section3_blog_3_data_img['title'] }}" />
                             </div>
                             <div class="utf_post_content"> <a class="utf_post_cat"
-                                    href="#">{{ getBlogCategoryName($section3_blog_3_data->cat_id) }}</a>
+                                    href="{{ route('frontend.blogCategory', getBlogCategorySlug($section3_blog_3_data->cat_id)) }}">{{ getBlogCategoryName($section3_blog_3_data->cat_id) }}</a>
                                 <h2 class="utf_post_title"> <a
                                         href="{{ route('frontend.blogDetails', $section3_blog_3_data->slug) }}">{{ $section3_blog_3_data->title }}</a>
                                 </h2>
@@ -467,8 +467,6 @@
                                     $section4_blog_list_data = $section4_data['blogCheckbox'];
                                 @endphp
 
-
-
                                 <div class="item">
 
                                     @foreach ($section4_blog_list_data as $section4_key => $section4_single_data)
@@ -485,13 +483,13 @@
                         @endphp
 
                         <div class="utf_post_block_style utf_post_float_half clearfix">
-                            <div class="utf_post_thumb"> <a href="#"> <img class="img-fluid"
-                                        src="{{ $section4_blog_data_img['src'] }}"
-                                        alt="{{ $section4_blog_data_img['alt'] }}"
-                                        title="{{ $section4_blog_data_img['title'] }}" /> </a>
+                            <div class="utf_post_thumb"> <img class="img-fluid"
+                                    src="{{ $section4_blog_data_img['src'] }}"
+                                    alt="{{ $section4_blog_data_img['alt'] }}"
+                                    title="{{ $section4_blog_data_img['title'] }}" />
                             </div>
                             <a class="utf_post_cat"
-                                href="#">{{ getBlogCategoryName($section4_blog_data->cat_id) }}</a>
+                                href="{{ route('frontend.blogCategory', getBlogCategorySlug($section4_blog_data->cat_id)) }}">{{ getBlogCategoryName($section4_blog_data->cat_id) }}</a>
                             <div class="utf_post_content">
                                 <h2 class="utf_post_title"> <a
                                         href="{{ route('frontend.blogDetails', $section4_blog_data->slug) }}">
@@ -533,14 +531,14 @@
                                     $section5_single_blog_media = getMediaUrl($section5_single_blog_data->main_pic);
                                 @endphp
                                 <div class="utf_post_overaly_style clearfix">
-                                    <div class="utf_post_thumb"> <a href="#"> <img class="img-fluid"
-                                                src="{{ $section5_single_blog_media['src'] }}"
-                                                alt="{{ $section5_single_blog_media['alt'] }}"
-                                                title="{{ $section5_single_blog_media['title'] }}" />
-                                        </a>
+                                    <div class="utf_post_thumb"> <img class="img-fluid"
+                                            src="{{ $section5_single_blog_media['src'] }}"
+                                            alt="{{ $section5_single_blog_media['alt'] }}"
+                                            title="{{ $section5_single_blog_media['title'] }}" />
+
                                     </div>
                                     <div class="utf_post_content"> <a class="utf_post_cat"
-                                            href="#">{{ getBlogCategoryName($section5_single_blog_data->cat_id) }}</a>
+                                            href="{{ route('frontend.blogCategory', getBlogCategorySlug($section5_single_blog_data->cat_id)) }}">{{ getBlogCategoryName($section5_single_blog_data->cat_id) }}</a>
                                         <h2 class="utf_post_title"> <a
                                                 href="{{ route('frontend.blogDetails', $section5_single_blog_data->slug) }}">
                                                 {{ $section5_single_blog_data->title }}</a>
@@ -567,12 +565,13 @@
                                     @endphp
                                     <li class="clearfix">
                                         <div class="utf_post_block_style post-float clearfix">
-                                            <div class="utf_post_thumb"> <a href="#"> <img class="img-fluid"
-                                                        src="{{ $section5_single_blog_media['src'] }}"
-                                                        alt="{{ $section5_single_blog_media['alt'] }}"
-                                                        title="{{ $section5_single_blog_media['title'] }}" /> </a> <a
+                                            <div class="utf_post_thumb"> <img class="img-fluid"
+                                                    src="{{ $section5_single_blog_media['src'] }}"
+                                                    alt="{{ $section5_single_blog_media['alt'] }}"
+                                                    title="{{ $section5_single_blog_media['title'] }}" /> <a
                                                     class="utf_post_cat"
-                                                    href="#">{{ $section5_single_blog_data->cat_id }}</a> </div>
+                                                    href="{{ route('frontend.blogCategory', getBlogCategorySlug($section5_single_blog_data->cat_id)) }}">{{ $section5_single_blog_data->cat_id }}</a>
+                                            </div>
                                             <div class="utf_post_content">
                                                 <h2 class="utf_post_title title-small"> <a
                                                         href="{{ route('frontend.blogDetails', $section5_single_blog_data->slug) }}">{{ $section5_single_blog_data->title }}</a>

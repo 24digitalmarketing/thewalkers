@@ -54,6 +54,35 @@ class BlogController extends Controller
         }
     }
 
+    public function blogCategory($slug)
+    {
+
+        $getCategory_id  = BlogCategoryModel::where('slug', '=', $slug)->first();
+        if (!is_null($getCategory_id)) {
+            $cat_id = $getCategory_id->cat_id;
+
+            // all blog  
+            $blogData =  BlogModel::where([
+                ['cat_id', '=', $cat_id],
+                ['status', '=', 'published']
+            ])->orderBy('id', 'desc')->get();
+
+            // popular blogs 
+            $popularBlogData = BlogModel::where([
+                ['status', '=', 'published'],
+                ['popular', '=', '1']
+            ])->orderBy('id', 'desc')->get();
+
+            if (!is_null($blogData)) {
+                return view('frontend.blog')->with(compact('blogData', 'popularBlogData'));
+            } else {
+                abort(404, 'Data not found');
+            }
+        } else {
+            abort(404, 'Data not found');
+        }
+    }
+
     public function addBlogIndex()
     {
         $blogCategory = BlogCategoryModel::orderBy('cat_name', 'desc')->get();

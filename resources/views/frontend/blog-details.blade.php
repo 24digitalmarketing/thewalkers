@@ -1,5 +1,13 @@
 @extends('frontend.main')
 @section('main-sec')
+
+    @push('style')
+        <style>
+            .widget-tags ul>li {
+                float: none;
+            }
+        </style>
+    @endpush
     <!-- 1rd Block Wrapper Start -->
     <section class="utf_block_wrapper">
         <div class="container">
@@ -220,7 +228,22 @@
                                 <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
-
+                        <div class="widget widget-tags">
+                            <h3 class="utf_block_title"><span>Category</span></h3>
+                            <ul class="unstyled clearfix">
+                                @php
+                                    $category = DB::table('blog_category')
+                                        ->orderBy('cat_name', 'asc')
+                                        ->get();
+                                @endphp
+                                @if (count($category) > 0)
+                                    @foreach ($category as $single_category)
+                                        <li><a href="{{ route('frontend.blogCategory', $single_category->slug) }}">
+                                                {{ $single_category->cat_name }}</a></li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        </div>
                         <div class="widget color-default">
                             <h3 class="utf_block_title"><span>Popular News</span></h3>
                             <div class="utf_list_post_block">

@@ -348,6 +348,15 @@ function getBlogCategoryName($cat_id)
         return "Not Found";
     }
 }
+function getBlogCategorySlug($cat_id)
+{
+    $data = DB::table('blog_category')->where('cat_id', '=', "$cat_id")->get();
+    if (count($data) != 0) {
+        return $data[0]->slug;
+    } else {
+        return "#";
+    }
+}
 
 
 function showComments($blogId)
