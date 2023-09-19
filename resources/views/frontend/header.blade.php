@@ -173,6 +173,7 @@
                                 class="collapse navbar-collapse navbar-responsive-collapse">
                                 <ul class="nav navbar-nav">
                                     <li> <a href="{{ route('frontend.blog') }}">Blog</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}">Webstories</a> </li>
                                 </ul>
                             </div>
                         </div>

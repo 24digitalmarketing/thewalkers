@@ -532,3 +532,17 @@ function TagCheckbox()
     }
     return $list;
 }
+
+
+
+function webCategory()
+{
+    $data = DB::table('webstories_categories')->orderBy('cat_name', 'asc')->get();
+    $options = "";
+    if (count($data) > 0) {
+        foreach ($data as $single_data) {
+            $options .= "<option value='$single_data->id'>$single_data->cat_name</option>";
+        }
+    }
+    return $options;
+}

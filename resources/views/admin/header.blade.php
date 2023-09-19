@@ -99,19 +99,25 @@
                 </li>
                 <li>
                     <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class="fa-sharp fa-regular fa-images"></i>
+                        <div class="parent-icon"><i class="fa-solid fa-images"></i>
                         </div>
-                        <div class="menu-title">Media</div>
+                        <div class="menu-title">Webstories</div>
                     </a>
                     <ul>
-                        <li> <a href="{{ route('admin.addMediaIndex') }}"><i class="bx bx-right-arrow-alt"></i>Add
-                                Media</a>
+                        <li> <a href="{{ route('admin.adminWebStoryCategory') }}"><i
+                                    class="bx bx-right-arrow-alt"></i>Category</a>
                         </li>
-                        <li> <a href="{{ route('admin.mediaIndex') }}"><i class="bx bx-right-arrow-alt"></i>All Media
+                        <li> <a href="{{ route('admin.addWebStories') }}"><i class="bx bx-right-arrow-alt"></i>Add
+                                Webstories
+                            </a>
+                        </li>
+                        <li> <a href="{{ route('admin.showWebStories') }}"><i class="bx bx-right-arrow-alt"></i>Show
+                                Webstories
                             </a>
                         </li>
                     </ul>
                 </li>
+
 
                 <li>
                     <a href="{{ route('admin.contactIndex') }}">
@@ -126,6 +132,24 @@
                         </div>
                         <div class="menu-title">Home Page</div>
                     </a>
+                </li>
+
+
+
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="fa-sharp fa-regular fa-images"></i>
+                        </div>
+                        <div class="menu-title">Media</div>
+                    </a>
+                    <ul>
+                        <li> <a href="{{ route('admin.addMediaIndex') }}"><i class="bx bx-right-arrow-alt"></i>Add
+                                Media</a>
+                        </li>
+                        <li> <a href="{{ route('admin.mediaIndex') }}"><i class="bx bx-right-arrow-alt"></i>All Media
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <!--end navigation-->

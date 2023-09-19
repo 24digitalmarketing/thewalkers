@@ -17,6 +17,9 @@ use App\Http\Controllers\BlogCommentController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\HomeModelController;
 use App\Http\Controllers\TagsModelController;
+use App\Http\Controllers\WebstoriesCategoryController;
+use App\Http\Controllers\WebstoriesController;
+use App\Models\Webstories;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,11 +73,11 @@ Route::controller(StaticPageController::class)->name('frontend.')->group(functio
     Route::get('/terms-and-conditions', 'termsConditions')->name('termsConditions');
     Route::get('/privacy-policy', 'privacyPolicy')->name('privacyPolicy');
 });
-// Route::controller(AMPController::class)->name('frontend.')->group(function () {
-//     Route::get('/amp', 'ampPage')->name('ampPage');
-// });
-
-
+Route::controller(WebstoriesController::class)->name('frontend.')->group(function () {
+    Route::get('/webstories', 'webstory')->name('webstory');
+    Route::get('/webstories/{slug}', 'webstoryCategory')->name('webstoryCategory');
+    Route::get('/webstories/view/{slug}', 'webstoryView')->name('webstoryView');
+});
 
 
 // =================== Admin Dashboard Started =================
@@ -189,6 +192,23 @@ Route::middleware('adminLogin')->group(function () {
     Route::controller(HomeModelController::class)->prefix('admin')->name('admin.')->group(function () {
         Route::get('/home-page', 'homePage')->name('homePage');
         Route::post('/home-page-save', 'homePageSave')->name('homePageSave');
+    });
+
+
+    Route::controller(WebstoriesCategoryController::class)->prefix('admin')->name('admin.')->group(function () {
+        Route::get('/web-story-category', 'index')->name('adminWebStoryCategory');
+        Route::post('/web-story-category', 'save')->name('adminWebStoryCategorySave');
+        Route::get('/web-story-category-edit/{id}', 'show')->name('adminWebStoryCategoryShow');
+        Route::post('/web-story-category-edit/{id}', 'update')->name('adminWebStoryCategoryUpdate');
+    });
+
+
+    Route::controller(WebstoriesController::class)->prefix('admin')->name('admin.')->group(function () {
+        Route::get('/add-webstories', 'index')->name('addWebStories');
+        Route::post('/add-webstories', 'save')->name('addWebStoriesSave');
+        Route::get('/view-webstories', 'show')->name('showWebStories');
+        Route::get('/edit-webstories/{id}', 'editWebStories')->name('editWebStories');
+        Route::post('/edit-webstories/{id}', 'updateWebStories')->name('updateWebStories');
     });
 });
 
