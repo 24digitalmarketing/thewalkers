@@ -38,7 +38,7 @@
                 </div>
                 @if (count($data) > 0)
                     @foreach ($data as $single_data)
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 mb-3">
                             <a href="{{ route('frontend.webstoryView', $single_data->slug) }}" target="blank">
                                 <div class="web-story-container">
                                     <div class="web-story-img">

@@ -146,22 +146,25 @@
                     <amp-img src="{{ $media_img['src'] }}" width="720" height="1280">
                     </amp-img>
                 </amp-story-grid-layer>
-                <div class="next-story-btn">
-                    @php
-                        
-                        // next story
-                        $next_story = DB::table('webstories')
-                            ->where('id', '>', $id)
-                            ->limit(1)
-                            ->get();
-                        
-                    @endphp
-                    @if (count($next_story) > 0)
-                        <a href="{{ route('frontend.webstoryView', $next_story[0]->slug) }}" class="next-story"><img
-                                src="{{ asset('assets/images/link.svg') }}"> Next
-                            Story</a>
+
+                @php
+                    
+                    // next story
+                    $next_story = DB::table('webstories')
+                        ->where('id', '>', $id)
+                        ->limit(1)
+                        ->get();
+                    
+                @endphp
+                @if (count($next_story) > 0)
+                    @if ($key == count($media) - 1)
+                        <amp-story-page-outlink layout="nodisplay">
+                            <a href="{{ route('frontend.webstoryView', $next_story[0]->slug) }}" title="Next Story">Next
+                                Story</a>
+                        </amp-story-page-outlink>
                     @endif
-                </div>
+                @endif
+
             </amp-story-page>
         @endforeach
     </amp-story>

@@ -174,6 +174,21 @@
                                 <ul class="nav navbar-nav">
                                     <li> <a href="{{ route('frontend.blog') }}">Blog</a> </li>
                                     <li> <a href="{{ route('frontend.webstory') }}">Webstories</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Sports</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Tech & Media</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Business</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Education</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Travel</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Health</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Culture & Trend</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> News</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Fashion</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Lifestyle</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Politics</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Policy</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Video</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Election 2024</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Weather</a> </li>
                                 </ul>
                             </div>
                         </div>
