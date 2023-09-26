@@ -50,7 +50,7 @@
                                                 <button type="button" class="btn btn-danger disabled-btn"
                                                     data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Delete"
                                                     disabled
-                                                    onclick="deleteConfirm('meta-delete-all','meta', 'true','','')"><i
+                                                    onclick="deleteConfirm('meta-delete-all','meta', 'false','','')"><i
                                                         class="fa-regular fa-trash"></i>
                                                     <input type="hidden" value="" id="meta-delete-all">
                                                 </button>

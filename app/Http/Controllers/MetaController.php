@@ -25,6 +25,7 @@ class MetaController extends Controller
             "og_url" => "required",
             "og_title" => "required",
             "og_img_url" => "required",
+            "page_name" => "required",
             "og_decription" => "required"
         ]);
 
@@ -50,6 +51,7 @@ class MetaController extends Controller
             $data->twitter_title = trim($request->twitter_title);
             $data->twitter_img_url = trim($request->twitter_img_url);
             $data->twitter_des = trim($request->twitter_description);
+            $data->page_name = trim($request->page_name);
             $data->js_schema = trim($request->schema);
 
             $save_status = $data->save();
@@ -89,6 +91,7 @@ class MetaController extends Controller
             "og_url" => "required",
             "og_title" => "required",
             "og_img_url" => "required",
+            "page_name" => "required",
             "og_decription" => "required"
         ]);
 
@@ -114,6 +117,7 @@ class MetaController extends Controller
             $data[0]->twitter_title = trim($request->twitter_title);
             $data[0]->twitter_img_url = trim($request->twitter_img_url);
             $data[0]->twitter_des = trim($request->twitter_description);
+            $data[0]->page_name = trim($request->page_name);
             $data[0]->js_schema = trim($request->schema);
 
             $save_status = $data[0]->save();

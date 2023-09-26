@@ -84,27 +84,33 @@
                                 @foreach ($related_blog as $single_related_blog)
                                     @php
                                         $relatedBlogData = blogData($single_related_blog);
-                                        // media
-                                        $related_media = getMediaUrl($relatedBlogData->main_pic);
+                                        
                                     @endphp
-                                    <div class="item">
-                                        <div class="utf_post_block_style clearfix">
-                                            <div class="utf_post_thumb"> <img class="img-fluid"
-                                                    src="{{ $related_media['src'] }}" alt="{{ $related_media['alt'] }}"
-                                                    title="{{ $related_media['title'] }}" />
-                                            </div>
-                                            <a class="utf_post_cat"
-                                                href="#">{{ getBlogCategoryName($relatedBlogData->cat_id) }}</a>
-                                            <div class="utf_post_content">
-                                                <h2 class="utf_post_title title-medium"> <a
-                                                        href="{{ route('frontend.blogDetails', $relatedBlogData->slug) }}">
-                                                        {{ $relatedBlogData->title }}</a> </h2>
-                                                <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                            class="fa fa-clock-o"></i>
-                                                        {{ showDateTime($relatedBlogData->created_at) }}</span> </div>
+
+                                    @if ($relatedBlogData)
+                                        @php
+                                            $related_media = getMediaUrl($relatedBlogData->main_pic);
+                                        @endphp
+                                        <div class="item">
+                                            <div class="utf_post_block_style clearfix">
+                                                <div class="utf_post_thumb"> <img class="img-fluid"
+                                                        src="{{ $related_media['src'] }}"
+                                                        alt="{{ $related_media['alt'] }}"
+                                                        title="{{ $related_media['title'] }}" />
+                                                </div>
+                                                <a class="utf_post_cat"
+                                                    href="#">{{ getBlogCategoryName($relatedBlogData->cat_id) }}</a>
+                                                <div class="utf_post_content">
+                                                    <h2 class="utf_post_title title-medium"> <a
+                                                            href="{{ route('frontend.blogDetails', $relatedBlogData->slug) }}">
+                                                            {{ $relatedBlogData->title }}</a> </h2>
+                                                    <div class="utf_post_meta"> <span class="utf_post_date"><i
+                                                                class="fa fa-clock-o"></i>
+                                                            {{ showDateTime($relatedBlogData->created_at) }}</span> </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endforeach
                             @endif
                         </div>
@@ -281,8 +287,6 @@
                                 </ul>
                             </div>
                         </div>
-
-
 
                     </div>
                 </div>

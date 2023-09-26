@@ -174,7 +174,21 @@
                                 <ul class="nav navbar-nav">
                                     <li> <a href="{{ route('frontend.blog') }}">Blog</a> </li>
                                     <li> <a href="{{ route('frontend.webstory') }}">Webstories</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Sports</a> </li>
+
+                                    @php
+                                        $head_category = DB::table('blog_category')
+                                            ->orderBy('cat_name', 'asc')
+                                            ->get();
+                                    @endphp
+                                    @if (count($head_category) > 0)
+                                        @foreach ($head_category as $single_head_category)
+                                            <li><a
+                                                    href="{{ route('frontend.blogCategory', $single_head_category->slug) }}">
+                                                    {{ $single_head_category->cat_name }}</a></li>
+                                        @endforeach
+                                    @endif
+
+                                    {{-- <li> <a href="{{ route('frontend.webstory') }}"> Sports</a> </li>
                                     <li> <a href="{{ route('frontend.webstory') }}"> Tech & Media</a> </li>
                                     <li> <a href="{{ route('frontend.webstory') }}"> Business</a> </li>
                                     <li> <a href="{{ route('frontend.webstory') }}"> Education</a> </li>
@@ -188,7 +202,7 @@
                                     <li> <a href="{{ route('frontend.webstory') }}"> Policy</a> </li>
                                     <li> <a href="{{ route('frontend.webstory') }}"> Video</a> </li>
                                     <li> <a href="{{ route('frontend.webstory') }}"> Election 2024</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Weather</a> </li>
+                                    <li> <a href="{{ route('frontend.webstory') }}"> Weather</a> </li> --}}
                                 </ul>
                             </div>
                         </div>
