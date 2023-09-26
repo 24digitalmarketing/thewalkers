@@ -79,51 +79,6 @@
                                         class="form-control" required placeholder="0 or 1">
                                     <p class="form-feedback invalid-feedback" data-name="popular"></p>
                                 </div>
-                                <div class="col-lg-6 mb-3">
-                                    <label class="form-label"> Tags <span class="text-danger">*</span></label>
-                                    <div class="list-group">
-                                        @php
-                                            $tags = DB::table('tags')
-                                                ->orderBy('tag', 'asc')
-                                                ->get();
-                                        @endphp
-                                        @if (count($tags) > 0)
-
-                                            @if (!is_null($data[0]->tags) && $data[0]->tags != '')
-                                                @php
-                                                    $selected_tags = json_decode($data[0]->tags, true);
-                                                @endphp
-                                                @foreach ($tags as $single_tag)
-                                                    @if (!in_array($single_tag->id, $selected_tags))
-                                                        <div class="list-group">
-                                                            <label class="list-group-item">
-                                                                <input class="form-check-input me-1" name="tag[]"
-                                                                    type="checkbox" value="{{ $single_tag->id }}">
-                                                                {{ $single_tag->tag }}
-                                                            </label>
-
-                                                        </div>
-                                                    @else
-                                                        <div class="list-group">
-                                                            <label class="list-group-item">
-                                                                <input class="form-check-input me-1" name="tag[]"
-                                                                    type="checkbox" checked value="{{ $single_tag->id }}">
-                                                                {{ $single_tag->tag }}
-                                                            </label>
-
-                                                        </div>
-                                                    @endif
-                                                @endforeach
-                                            @else
-                                                @php
-                                                    echo TagCheckbox();
-                                                @endphp
-                                            @endif
-
-                                        @endif
-                                    </div>
-                                    <p class="form-feedback invalid-feedback" data-name="tags"></p>
-                                </div>
 
                                 <div class="col-lg-6 mb-3">
                                     <label class="form-label"> Related Blogs <span class="text-danger">*</span></label>

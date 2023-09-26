@@ -72,8 +72,8 @@
                         <li> <a href="{{ route('admin.adminBlogCategory') }}"><i class="bx bx-right-arrow-alt"></i>Blog
                                 Category</a>
                         </li>
-                        <li> <a href="{{ route('admin.addTag') }}"><i class="bx bx-right-arrow-alt"></i>Tags</a>
-                        </li>
+                        {{-- <li> <a href="{{ route('admin.addTag') }}"><i class="bx bx-right-arrow-alt"></i>Tags</a>
+                        </li> --}}
                         <li> <a href="{{ route('admin.viewblogs') }}"><i class="bx bx-right-arrow-alt"></i>Show Blog
                             </a>
                         </li>

@@ -68,7 +68,7 @@
                                     <input type="number" name="popular" class="form-control" required placeholder="0 or 1">
                                     <p class="form-feedback invalid-feedback" data-name="popular"></p>
                                 </div>
-                                <div class="col-lg-6 mb-3">
+                                {{-- <div class="col-lg-6 mb-3">
                                     <label class="form-label"> Tags <span class="text-danger">*</span></label>
                                     <div style="max-height: 300px" class="overflow-auto">
                                         <div class="list-group">
@@ -78,7 +78,7 @@
                                         </div>
                                     </div>
                                     <p class="form-feedback invalid-feedback" data-name="tags"></p>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-lg-6 mb-3">
                                     <label class="form-label"> Related Blogs <span class="text-danger">*</span></label>

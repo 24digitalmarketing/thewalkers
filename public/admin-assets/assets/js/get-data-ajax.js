@@ -171,7 +171,6 @@ let blogColumn = [
     "slug",
     "main_pic",
     "popular",
-    "tags",
     "status",
 ];
 let Trash_blogColumn = blogColumn;

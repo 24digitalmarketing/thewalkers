@@ -283,27 +283,7 @@
                         </div>
 
 
-                        <div class="widget widget-tags">
-                            <h3 class="utf_block_title"><span>Popular Tags</span></h3>
-                            <ul class="unstyled clearfix">
-                                @if (!is_null($blogData->tags) && $blogData->tags != '')
-                                    @php
-                                        $tags = json_decode($blogData->tags, true);
-                                    @endphp
-                                    @foreach ($tags as $single_tag)
-                                        @php
-                                            $tag_data = DB::table('tags')
-                                                ->where('id', '=', $single_tag)
-                                                ->first();
-                                        @endphp
-                                        @if (!is_null($tag_data))
-                                            <li><a href="#">{{ $tag_data->tag }}</a></li>
-                                        @endif
-                                    @endforeach
-                                @endif
 
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>

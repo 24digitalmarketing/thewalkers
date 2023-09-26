@@ -76,7 +76,6 @@
                                                 <th class="sort text-nowrap">Slug</th>
                                                 <th class="sort text-nowrap text-center">Main Picture</th>
                                                 <th class="sort text-nowrap">Popular</th>
-                                                <th class="sort text-nowrap">Tags</th>
                                                 <th class="sort text-nowrap">Status</th>
                                                 <th class="sort text-nowrap">Created At</th>
                                                 <th class="sort text-nowrap">Updated At</th>

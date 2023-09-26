@@ -98,7 +98,7 @@ class BlogController extends Controller
             'file' => "required",
             'short_description' => "required",
             'popular' => "required",
-            'tag' => "required",
+
             'blogCheckbox' => "required",
             'blog_content' => "required"
         ]);
@@ -125,7 +125,7 @@ class BlogController extends Controller
             $saveData->short_des = sanitizeInput($request->short_description);
             $saveData->blog_content = $blog_content;
             $saveData->popular = sanitizeInput($request->popular);
-            $saveData->tags =  json_encode($request->tag);
+
             $saveData->related =  json_encode($request->blogCheckbox);
             $saveStatus = $saveData->save();
             if ($saveStatus === true) {
@@ -166,7 +166,7 @@ class BlogController extends Controller
             'title' => "required",
             'short_description' => "required",
             'popular' => "required",
-            'tag' => "required",
+
             'blogCheckbox' => "required",
             'blog_content' => "required"
         ]);
@@ -194,7 +194,6 @@ class BlogController extends Controller
             $saveData[0]->blog_content = $blog_content;
             $saveData[0]->short_des = sanitizeInput($request->short_description);
             $saveData[0]->popular = sanitizeInput($request->popular);
-            $saveData[0]->tags =  json_encode($request->tag);
             $saveData[0]->related =  json_encode($request->blogCheckbox);
             $saveData[0]->status = $request->status;
             $saveStatus = $saveData[0]->save();
@@ -261,27 +260,8 @@ class BlogController extends Controller
                     $href = route('frontend.blogDetails', $data->slug);
                     return  "<a href='$href' target='_blank' class='text-primary'>$data->title</a>";
                 })
-                ->editColumn('tags', function ($data) {
 
-                    $tag_str  = '';
-                    if (!is_null($data->tags) && $data->tags != '') {
-                        $tags = json_decode($data->tags, true);
-                        foreach ($tags as $key => $single_tag) {
-                            $tag_data = TagsModel::find($single_tag);
-
-                            if (!is_null($tag_data)) {
-                                if ($key != 0) {
-                                    $tag_str .= ' , ' . $tag_data->tag;
-                                } else {
-                                    $tag_str .=  $tag_data->tag;
-                                }
-                            }
-                        }
-                    }
-
-                    return $tag_str;
-                })
-                ->rawColumns(['action', 'checkbox', 'main_pic', 'title', 'tags'])
+                ->rawColumns(['action', 'checkbox', 'main_pic', 'title',])
                 ->toJson();
         }
 
