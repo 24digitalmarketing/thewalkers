@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
-                                    <label class="form-label"> Related Blogs <span class="text-danger">*</span></label>
+                                    <label class="form-label"> Related Blogs   </label>
                                     <div style="max-height: 300px" class="overflow-auto">
                                         <div class="list-group">
                                             @php
