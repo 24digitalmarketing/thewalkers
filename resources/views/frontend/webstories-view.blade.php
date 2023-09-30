@@ -125,7 +125,7 @@
         }
 
         .next-story-btn .next-story:hover {
-            background-color: #FFB000
+            background-color: #ff0000
         }
     </style>
 </head>
