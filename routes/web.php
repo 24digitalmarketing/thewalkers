@@ -168,7 +168,7 @@ Route::middleware('adminLogin')->group(function () {
         Route::get('/add-blog', 'addBlogIndex')->name('adminAddBlog');
         Route::post('/add-blog', 'addBlogSave')->name('addBlogSave');
         Route::get('/view-blogs', 'viewBlogs')->name('viewblogs');
-        Route::get('/edit-blob/{id}', 'editBlog')->name('editBlog');
+        Route::get('/edit-blog/{id}', 'editBlog')->name('editBlog');
         Route::post('/edit-blog/{id}', 'updateBlog')->name('updateBlog');
         Route::get('/blog-datatable-data', 'getBlogData')->name('getBlogData');
     });

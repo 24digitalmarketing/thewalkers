@@ -98,7 +98,6 @@ class BlogController extends Controller
             'file' => "required",
             'short_description' => "required",
             'popular' => "required",
-
             'blog_content' => "required"
         ]);
         if ($validator->fails()) {
@@ -193,7 +192,7 @@ class BlogController extends Controller
             $saveData[0]->blog_content = $blog_content;
             $saveData[0]->short_des = sanitizeInput($request->short_description);
             $saveData[0]->popular = sanitizeInput($request->popular);
-
+            $saveData[0]->related =  json_encode($request->blogCheckbox);
             $saveData[0]->status = $request->status;
             $saveStatus = $saveData[0]->save();
 

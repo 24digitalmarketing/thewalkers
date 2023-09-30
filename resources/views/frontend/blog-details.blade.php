@@ -6,6 +6,10 @@
             .widget-tags ul>li {
                 float: none;
             }
+
+            .entry-content {
+                max-width: 100%;
+            }
         </style>
     @endpush
     <!-- 1rd Block Wrapper Start -->
@@ -36,18 +40,7 @@
                             </div>
 
 
-                            <div class="share-items clearfix">
-                                <ul class="post-social-icons unstyled">
-                                    <li class="facebook"> <a href="#"> <i class="fa fa-facebook"></i> <span
-                                                class="ts-social-title">Facebook</span></a> </li>
-                                    <li class="twitter"> <a href="#"> <i class="fa fa-twitter"></i> <span
-                                                class="ts-social-title">Twitter</span></a> </li>
-                                    <li class="gplus"> <a href="#"> <i class="fa fa-google-plus"></i> <span
-                                                class="ts-social-title">Google +</span></a> </li>
-                                    <li class="pinterest"> <a href="#"> <i class="fa fa-pinterest"></i> <span
-                                                class="ts-social-title">Pinterest</span></a> </li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
 
@@ -74,10 +67,12 @@
                     </nav>
 
 
-                    <div class="related-posts block">
-                        <h3 class="utf_block_title"><span>Related Posts</span></h3>
-                        <div id="utf_latest_news_slide" class="owl-carousel owl-theme utf_latest_news_slide">
-                            @if (!is_null($blogData->related) && $blogData->related != '')
+                    @if (!is_null($blogData->related) && $blogData->related != '')
+                        <div class="related-posts block">
+                            <h3 class="utf_block_title"><span>Related Posts</span></h3>
+                            <div id="utf_latest_news_slide" class="owl-carousel owl-theme utf_latest_news_slide">
+
+
                                 @php
                                     $related_blog = json_decode($blogData->related, true);
                                 @endphp
@@ -112,9 +107,11 @@
                                         </div>
                                     @endif
                                 @endforeach
-                            @endif
+
+
+                            </div>
                         </div>
-                    </div>
+                    @endif
 
                     <!-- Post comment start -->
                     {{-- <div id="comments" class="comments-area block">
@@ -223,17 +220,7 @@
 
                 <div class="col-lg-4 col-md-12">
                     <div class="sidebar utf_sidebar_right">
-                        <div class="widget">
-                            <h3 class="utf_block_title"><span>Follow Us</span></h3>
-                            <ul class="social-icon">
-                                <li><a href="#" target="_blank"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-vimeo-square"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
+
                         <div class="widget widget-tags">
                             <h3 class="utf_block_title"><span>Category</span></h3>
                             <ul class="unstyled clearfix">

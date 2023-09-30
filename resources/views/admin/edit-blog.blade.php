@@ -92,7 +92,7 @@
                                             @endphp
                                             @if (count($blogs) > 0)
 
-                                                @if (!is_null($data[0]->related) && $data[0]->related != '')
+                                                @if (!is_null($data[0]->related) && $data[0]->related != '' && $data[0]->related != null )
                                                     @php
                                                         $selected_blogs = json_decode($data[0]->related, true);
                                                     @endphp

@@ -6,14 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="description" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" />
 
     {{-- ------- Dynamic Meta Started ------------  --}}
-
     @php
         // Program to display URL of current page.
         if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
@@ -48,8 +45,10 @@
         <meta name="twitter:description" content="{{ $metaData[0]->twitter_des }}">
         <meta name="twitter:image" content="{{ $metaData[0]->twitter_img_url }}">
         <meta property="og:type" content="{{ $metaData[0]->page_topic }}" />
-
         <link rel="canonical" href="{{ $link }}" />
+
+
+
     @endif
 
     @php
@@ -59,8 +58,8 @@
     @endphp
 
 
-    <meta property="site_name" content="adabkari.com" />
-    <meta property="og:site_name" content="adabkari.com" />
+    <meta property="site_name" content="thewalkers.org" />
+    <meta property="og:site_name" content="thewalkers.org" />
 
     <meta name="domainType" content=".com" />
     <meta name="Googlebot" content="Index, Follow" />
@@ -71,7 +70,7 @@
     <meta name="revisit-after" content="daily" />
     <meta name="classification" content="Online Betting" />
     <meta name="distribution" content="Global" />
-    <meta name="copyright" content="Copyright 2023 adabkari.com - All Rights Reserved" />
+    <meta name="copyright" content="Copyright 2023 thewalkers.org - All Rights Reserved" />
 
     <meta http-equiv='Expires' content='0'>
     <meta http-equiv='Pragma' content='no-cache'>
@@ -81,6 +80,8 @@
     <meta name="twitter:site" content="" />
     <meta name="twitter:creator" content="" />
 
+    <meta name="author" content="thewalkers.org">
+    <meta name="publisher" content="thewalkers.org">
 
     {{-- ------- Dynamic Meta End ------------  --}}
 
@@ -110,12 +111,11 @@
 
     <div class="body-inner">
         <!-- Topbar Start -->
-        <div id="top-bar" class="top-bar">
+        {{-- <div id="top-bar" class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
                         <ul class="unstyled top-nav">
-                            {{-- <li><a href="login-signup.html">Login & Signup</a></li> --}}
                             <li class="mx-2"><i class="fa fa-map-marker"></i> Lorem ipsum dolor sit
                             </li>
                             <li class="mx-2"><i class="fa fa-phone"></i> +91123456789
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Topbar End -->
 
 
@@ -149,8 +149,8 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
                         <div class="logo"> <a href="{{ route('frontend.index') }}">
-                                {{-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
-                                <h3> Thewalkers</h3>
+                                <img src="{{ asset('assets/images/logo.webp') }}" alt=""
+                                    style="max-height: 100px">
                             </a>
                         </div>
                     </div>
@@ -188,30 +188,11 @@
                                         @endforeach
                                     @endif
 
-                                    {{-- <li> <a href="{{ route('frontend.webstory') }}"> Sports</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Tech & Media</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Business</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Education</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Travel</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Health</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Culture & Trend</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> News</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Fashion</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Lifestyle</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Politics</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Policy</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Video</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Election 2024</a> </li>
-                                    <li> <a href="{{ route('frontend.webstory') }}"> Weather</a> </li> --}}
                                 </ul>
                             </div>
                         </div>
                     </nav>
-                    {{-- <div class="utf_nav_search"> <span id="search"><i class="fa fa-search"></i></span> </div>
-                    <div class="utf_search_block" style="display: none;">
-                        <input type="text" class="form-control" placeholder="Type what you want and enter">
-                        <span class="utf_search_close">&times;</span>
-                    </div> --}}
+
                 </div>
             </div>
         </div>
