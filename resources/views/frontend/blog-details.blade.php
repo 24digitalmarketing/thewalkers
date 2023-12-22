@@ -16,7 +16,7 @@
     <section class="utf_block_wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-12">
+                <div class="col-12">
                     <div class="single-post">
 
                         <div class="utf_post_title-area"> <a class="utf_post_cat"
@@ -218,7 +218,7 @@
                     <!-- Comments form end -->
                 </div>
 
-                <div class="col-lg-4 col-md-12">
+                {{-- <div class="col-lg-4 col-md-12">
                     <div class="sidebar utf_sidebar_right">
 
                         <div class="widget widget-tags">
@@ -276,7 +276,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
