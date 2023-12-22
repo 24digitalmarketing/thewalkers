@@ -102,9 +102,7 @@ class MediaController extends Controller
             $saveData = MediaModel::find($id);
             $saveData->alt = trim($request->alt);
             $saveData->title = trim($request->title);
-            $saveData->caption = trim($request->caption);
-            $saveData->description = trim($request->description);
-
+          
             $saveStatus = $saveData->save();
             if ($saveStatus === true) {
                 return response()->json([

@@ -59,17 +59,7 @@
                                                  value="{{ $data[0]->title }}">
                                              <p class="form-feedback invalid-feedback" data-name="title"></p>
                                          </div>
-                                         <div class="col-lg-6 mb-3">
-                                             <label class="form-label">Caption</label>
-                                             <input type="text" name="caption" class="form-control"
-                                                 value="{{ $data[0]->caption }}">
-                                             <p class="form-feedback invalid-feedback" data-name="caption"></p>
-                                         </div>
-                                         <div class="col-12 mb-3">
-                                             <label class="form-label">Description</label>
-                                             <textarea rows="5" name="description" class="form-control">{{ $data[0]->description }} </textarea>
-                                             <p class="form-feedback invalid-feedback" data-name="description"></p>
-                                         </div>
+                                         
                                      </div>
                                      <div class="mb-3" id="btn-box-1">
                                          <button class="btn btn-primary" type="submit" name="create"
