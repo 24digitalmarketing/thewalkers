@@ -529,22 +529,22 @@
                     {{-- blog 2 --}}
                     {{-- media  --}}
                     @php
-                        $section3_blog_3_data_img = getMediaUrl($section3_blog_3_data->main_pic);
+                        $section3_blog_2_data_img = getMediaUrl($section3_blog_2_data->main_pic);
                     @endphp
                     <div class="col-md-4">
                         <div class="utf_post_overaly_style text-center first clearfix mb-3 mb-md-0">
                             <div class="utf_post_thumb"> <img class="img-fluid"
-                                    src="{{ $section3_blog_3_data_img['src'] }}"
-                                    alt="{{ $section3_blog_3_data_img['alt'] }}"
-                                    title="{{ $section3_blog_3_data_img['title'] }}" />
+                                    src="{{ $section3_blog_2_data_img['src'] }}"
+                                    alt="{{ $section3_blog_2_data_img['alt'] }}"
+                                    title="{{ $section3_blog_2_data_img['title'] }}" />
                             </div>
                             <div class="utf_post_content"> <a class="utf_post_cat"
-                                    href="{{ route('frontend.blogCategory', getBlogCategorySlug($section3_blog_3_data->cat_id)) }}">{{ getBlogCategoryName($section3_blog_3_data->cat_id) }}</a>
+                                    href="{{ route('frontend.blogCategory', getBlogCategorySlug($section3_blog_2_data->cat_id)) }}">{{ getBlogCategoryName($section3_blog_2_data->cat_id) }}</a>
                                 <h2 class="utf_post_title"> <a
-                                        href="{{ route('frontend.blogDetails', $section3_blog_3_data->slug) }}">{{ $section3_blog_3_data->title }}</a>
+                                        href="{{ route('frontend.blogDetails', $section3_blog_2_data->slug) }}">{{ $section3_blog_2_data->title }}</a>
                                 </h2>
                                 <div class="utf_post_meta"> <span class="utf_post_date"><i class="fa fa-clock-o"></i>
-                                        {{ showDateTime($section3_blog_3_data->created_at) }}</span>
+                                        {{ showDateTime($section3_blog_2_data->created_at) }}</span>
                                 </div>
                             </div>
                         </div>

@@ -69,7 +69,7 @@ Route::controller(BlogCommentController::class)->name('frontend.')->group(functi
 
 
 Route::controller(StaticPageController::class)->name('frontend.')->group(function () {
-    Route::get('/about-us', 'aboutUs')->name('aboutUs');
+    // Route::get('/about-us', 'aboutUs')->name('aboutUs');
     Route::get('/terms-and-conditions', 'termsConditions')->name('termsConditions');
     Route::get('/privacy-policy', 'privacyPolicy')->name('privacyPolicy');
 });

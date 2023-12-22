@@ -2645,7 +2645,6 @@ ul.nav
 }
 .entry-content h3 {
     margin: 0;
-    padding: 20px;
     font-size: 22px;
     line-height: 30px;
 }
@@ -3427,3 +3426,4 @@ label {
     top: 5px;
     right: 5px;
 }
+ 

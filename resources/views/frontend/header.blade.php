@@ -58,8 +58,8 @@
     @endphp
 
 
-    <meta property="site_name" content="thewalkers.org" />
-    <meta property="og:site_name" content="thewalkers.org" />
+    <meta property="site_name" content="The Walkers" />
+    <meta property="og:site_name" content="The Walkers" />
 
     <meta name="domainType" content=".com" />
     <meta name="Googlebot" content="Index, Follow" />

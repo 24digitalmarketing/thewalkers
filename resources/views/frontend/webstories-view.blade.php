@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{ $title }}</title>
-    <!-- <link rel="canonical" href="pets.html"> -->
+    <link rel="canonical" href="{{ route('frontend.webstoryView', $data->slug) }}">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>
         body {
