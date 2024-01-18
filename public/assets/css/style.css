@@ -2750,8 +2750,9 @@ ul.nav
 }
 .post-navigation span {
     font-size: 14px;
-    color: #8a8a8a;
+    color: #000;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 .post-navigation .post-previous {
     text-align: left;

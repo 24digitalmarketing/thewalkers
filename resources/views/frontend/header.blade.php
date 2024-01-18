@@ -94,6 +94,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/colorbox.css') }}">
 
     <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800&amp;display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800&amp;display=swap"
@@ -145,8 +149,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
-                        <div class="logo"> <a href="{{ route('frontend.index') }}">
-                                <img src="{{ asset('assets/images/logo.webp') }}" alt=""
+                        <div class="logo"> <a href="{{ route('frontend.index') }}" title="Thewalkers">
+                                <img src="{{ asset('assets/images/logo.webp') }}"  alt="Thewalkers"
                                     style="max-height: 100px">
                             </a>
                         </div>

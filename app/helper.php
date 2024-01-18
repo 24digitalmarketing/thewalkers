@@ -375,7 +375,7 @@ function showComments($blogId)
             $comment = $single_comment->comment;
             $comment_str .= "
             <div class='col-sm position-relative mb-3 pb-3 border-bottom'>
-               <h6 class='font-w-6'>$full_name</h6>
+               <strong class='font-w-6'>$full_name</strong>
                <div class='comment-date'>$date_time</div>
                <p class='mb-0 mt-3'> $comment</p>
             </div>";
@@ -383,7 +383,7 @@ function showComments($blogId)
 
         return $comment_str;
     } else {
-        return "<h6> 0 Comments </h6>";
+        return "<strong> 0 Comments </strong>";
     }
 }
 

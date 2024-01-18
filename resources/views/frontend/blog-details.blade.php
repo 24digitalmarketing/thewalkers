@@ -14,6 +14,39 @@
             .entry-content img {
                 max-width: 100%
             }
+
+            a.utf_post_cat {
+                padding: 5px 10px;
+                height: auto;
+                font-size: 15px;
+                color: #000;
+                font-weight: bold;
+            }
+
+            .btn-primary {
+                color: #000;
+                font-weight: bold;
+            }
+
+            @media screen and (max-width:600px) {
+                h2 {
+                    font-size: 18px;
+                    line-height: 26px
+                }
+
+                .entry-content h3 {
+                    font-size: 16px;
+                    line-height: 26px
+                }
+
+                p {
+                    text-align: justify;
+                }
+            }
+
+            .form-control {
+                color: #000;
+            }
         </style>
     @endpush
     <!-- 1rd Block Wrapper Start -->
@@ -42,7 +75,9 @@
                                     echo html_entity_decode($blogData->blog_content);
                                 @endphp
                             </div>
- 
+
+
+
                         </div>
                     </div>
 
@@ -120,7 +155,7 @@
 
                     <!-- Post comment start -->
                     <div id="comments" class="comments-area block">
-                        <h3 class="utf_block_title"><span>Comments</span></h3>
+                        <strong class="utf_block_title d-block"><span>Comments</span></strong>
                         @php
                             echo showComments($blogData->id);
                         @endphp
@@ -174,7 +209,7 @@
                     <div class="sidebar utf_sidebar_right">
 
                         <div class="widget widget-tags">
-                            <h3 class="utf_block_title"><span>Category</span></h3>
+                            <strong class="utf_block_title"><span>Category</span></strong>
                             <ul class="unstyled clearfix">
                                 @php
                                     $category = DB::table('blog_category')
