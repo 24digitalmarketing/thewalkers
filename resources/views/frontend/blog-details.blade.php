@@ -10,6 +10,10 @@
             .entry-content {
                 max-width: 100%;
             }
+
+            .entry-content img {
+                max-width: 100%
+            }
         </style>
     @endpush
     <!-- 1rd Block Wrapper Start -->
@@ -38,9 +42,7 @@
                                     echo html_entity_decode($blogData->blog_content);
                                 @endphp
                             </div>
-
-
-
+ 
                         </div>
                     </div>
 
@@ -72,41 +74,44 @@
                             <h3 class="utf_block_title"><span>Related Posts</span></h3>
                             <div id="utf_latest_news_slide" class="owl-carousel owl-theme utf_latest_news_slide">
 
-
-                                @php
-                                    $related_blog = json_decode($blogData->related, true);
-                                @endphp
-                                @foreach ($related_blog as $single_related_blog)
+                                @if ($blogData->related != 'null')
                                     @php
-                                        $relatedBlogData = blogData($single_related_blog);
-                                        
+                                        $related_blog = json_decode($blogData->related, true);
                                     @endphp
-
-                                    @if ($relatedBlogData)
+                                    @foreach ($related_blog as $single_related_blog)
                                         @php
-                                            $related_media = getMediaUrl($relatedBlogData->main_pic);
+                                            $relatedBlogData = blogData($single_related_blog);
+
                                         @endphp
-                                        <div class="item">
-                                            <div class="utf_post_block_style clearfix">
-                                                <div class="utf_post_thumb"> <img class="img-fluid"
-                                                        src="{{ $related_media['src'] }}"
-                                                        alt="{{ $related_media['alt'] }}"
-                                                        title="{{ $related_media['title'] }}" />
-                                                </div>
-                                                <a class="utf_post_cat"
-                                                    href="#">{{ getBlogCategoryName($relatedBlogData->cat_id) }}</a>
-                                                <div class="utf_post_content">
-                                                    <h2 class="utf_post_title title-medium"> <a
-                                                            href="{{ route('frontend.blogDetails', $relatedBlogData->slug) }}">
-                                                            {{ $relatedBlogData->title }}</a> </h2>
-                                                    <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                                class="fa fa-clock-o"></i>
-                                                            {{ showDateTime($relatedBlogData->created_at) }}</span> </div>
+
+                                        @if ($relatedBlogData)
+                                            @php
+                                                $related_media = getMediaUrl($relatedBlogData->main_pic);
+                                            @endphp
+                                            <div class="item">
+                                                <div class="utf_post_block_style clearfix">
+                                                    <div class="utf_post_thumb"> <img class="img-fluid"
+                                                            src="{{ $related_media['src'] }}"
+                                                            alt="{{ $related_media['alt'] }}"
+                                                            title="{{ $related_media['title'] }}" />
+                                                    </div>
+                                                    <a class="utf_post_cat"
+                                                        href="#">{{ getBlogCategoryName($relatedBlogData->cat_id) }}</a>
+                                                    <div class="utf_post_content">
+                                                        <h2 class="utf_post_title title-medium"> <a
+                                                                href="{{ route('frontend.blogDetails', $relatedBlogData->slug) }}">
+                                                                {{ $relatedBlogData->title }}</a> </h2>
+                                                        <div class="utf_post_meta"> <span class="utf_post_date"><i
+                                                                    class="fa fa-clock-o"></i>
+                                                                {{ showDateTime($relatedBlogData->created_at) }}</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endif
-                                @endforeach
+                                        @endif
+                                    @endforeach
+                                @endif
+
 
 
                             </div>
@@ -114,65 +119,12 @@
                     @endif
 
                     <!-- Post comment start -->
-                    {{-- <div id="comments" class="comments-area block">
-                        <h3 class="utf_block_title"><span>03 Comments</span></h3>
-                        <ul class="comments-list">
-                            <li>
-                                <div class="comment"> <img class="comment-avatar pull-left" alt=""
-                                        src="images/news/user1.png">
-                                    <div class="comment-body">
-                                        <div class="meta-data"> <span class="comment-author">Miss Lisa Doe</span> <span
-                                                class="comment-date pull-right">15 Jan, 2022</span> </div>
-                                        <div class="comment-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                Lorem Ipsum has been the industry's standard dummy text ever since It has
-                                                survived not only five centuries, but also the leap into electronic type
-                                                setting, remaining essentially unchanged.</p>
-                                        </div>
-                                        <div class="text-left"> <a class="comment-reply" href="#"><i
-                                                    class="fa fa-share"></i> Reply</a> </div>
-                                    </div>
-                                </div>
-
-                                <ul class="comments-reply">
-                                    <li>
-                                        <div class="comment"> <img class="comment-avatar pull-left" alt=""
-                                                src="images/news/user2.png">
-                                            <div class="comment-body">
-                                                <div class="meta-data"> <span class="comment-author">Miss Lisa Doe</span>
-                                                    <span class="comment-date pull-right">15 Jan, 2022</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry. Lorem Ipsum has been the industry's standard dummy text
-                                                        ever since It has survived not only five centuries, but also the
-                                                        leap into electronic type setting, remaining essentially unchanged.
-                                                    </p>
-                                                </div>
-                                                <div class="text-left"> <a class="comment-reply" href="#"><i
-                                                            class="fa fa-share"></i> Reply</a> </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="comment last"> <img class="comment-avatar pull-left" alt=""
-                                        src="images/news/user1.png">
-                                    <div class="comment-body">
-                                        <div class="meta-data"> <span class="comment-author">Miss Lisa Doe</span> <span
-                                                class="comment-date pull-right">15 Jan, 2022</span> </div>
-                                        <div class="comment-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                Lorem Ipsum has been the industry's standard dummy text ever since It has
-                                                survived not only five centuries, but also the leap into electronic type
-                                                setting, remaining essentially unchanged.</p>
-                                        </div>
-                                        <div class="text-left"> <a class="comment-reply" href="#"><i
-                                                    class="fa fa-share"></i> Reply</a> </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> --}}
+                    <div id="comments" class="comments-area block">
+                        <h3 class="utf_block_title"><span>Comments</span></h3>
+                        @php
+                            echo showComments($blogData->id);
+                        @endphp
+                    </div>
                     <!-- Post comment end -->
 
                     <!-- Comments Form Start -->

@@ -22,7 +22,7 @@ class BlogCommentController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
             'email' => 'required|email',
-            'comment' => 'required|max:250'
+            'comment' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -109,7 +109,7 @@ class BlogCommentController extends Controller
                     return $checkbox;
                 })
                 ->editColumn('blog', function ($data) {
-                    $blogData = DB::table('blogs')->where('blog_id', '=', $data->blog_id)->get();
+                    $blogData = DB::table('blogs')->where('id', '=', $data->blog_id)->get();
                     if (count($blogData) != 0) {
                         $blogTitle = $blogData[0]->title;
                         $slug = $blogData[0]->slug;

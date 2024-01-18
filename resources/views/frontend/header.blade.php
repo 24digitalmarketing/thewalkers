@@ -46,9 +46,6 @@
         <meta name="twitter:image" content="{{ $metaData[0]->twitter_img_url }}">
         <meta property="og:type" content="{{ $metaData[0]->page_topic }}" />
         <link rel="canonical" href="{{ $link }}" />
-
-
-
     @endif
 
     @php
