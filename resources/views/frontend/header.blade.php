@@ -18,20 +18,20 @@
         } else {
             $link = 'http';
         }
-        
+
         // Here append the common URL characters.
         $link .= '://';
-        
+
         // Append the host(domain name, ip) to the URL.
         $link .= $_SERVER['HTTP_HOST'];
-        
+
         // Append the requested resource location to the URL
         $link .= $_SERVER['REQUEST_URI'];
-        
+
         $metaData = DB::table('meta')
             ->where('url', '=', "$link")
             ->get();
-        
+
     @endphp
     @if (count($metaData) != 0)
         <title>{{ $metaData[0]->title }}</title>
@@ -85,8 +85,8 @@
     {{-- css  --}}
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
