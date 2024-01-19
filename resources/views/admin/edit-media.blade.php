@@ -35,7 +35,8 @@
                              </div>
                              <div class="card-body">
 
-                                 <form method="POST" id="media-form"
+                                  
+                                     <form method="POST" id="media-form"
                                      onsubmit="uploadData1('media-form','{{ route('admin.updateMedia', $data[0]->id) }}', 'alert-box', 'btn-box-1', event)"
                                      class="mx-3 p-3" enctype="multipart/form-data">
 
@@ -46,20 +47,25 @@
                                              <embed src="{{ asset('mystorage/media/' . $data[0]->img_name) }}"
                                                  style="height:200px">
                                          </div>
-                                         
+
+                                         <div class="col-12 mb-3">
+                                             <label class="form-label">Image</label>
+                                             <input type="file" name="file" class="form-control">
+                                             <p class="form-feedback invalid-feedback" data-name="file"></p>
+                                         </div>
                                          <div class="col-lg-6 mb-3">
-                                             <label class="form-label">Alt</label>
+                                             <label class="form-label">Alt <span class="text-danger">*</span></label>
                                              <input type="text" name="alt" class="form-control"
-                                                 value="{{ $data[0]->alt }}">
+                                                 value="{{ $data[0]->alt }}" required>
                                              <p class="form-feedback invalid-feedback" data-name="alt"></p>
                                          </div>
                                          <div class="col-lg-6 mb-3">
-                                             <label class="form-label">Title</label>
+                                             <label class="form-label">Title <span class="text-danger">*</span></label>
                                              <input type="text" name="title" class="form-control"
-                                                 value="{{ $data[0]->title }}">
+                                                 value="{{ $data[0]->title }}" required>
                                              <p class="form-feedback invalid-feedback" data-name="title"></p>
                                          </div>
-                                         
+
                                      </div>
                                      <div class="mb-3" id="btn-box-1">
                                          <button class="btn btn-primary" type="submit" name="create"

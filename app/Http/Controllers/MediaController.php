@@ -86,6 +86,7 @@ class MediaController extends Controller
 
     public function updateMedia(Request $request, $id)
     {
+
         $validator = Validator::make($request->all(), [
             "alt" => "required",
             "title" => "required",
@@ -98,11 +99,16 @@ class MediaController extends Controller
                 'redirect' => '0'
             ]);
         } else {
-
             $saveData = MediaModel::find($id);
+            $old_img_name = $saveData->img_name;
             $saveData->alt = trim($request->alt);
             $saveData->title = trim($request->title);
-          
+
+            if ($request->hasFile('file')) {
+                $new_file = $request->file('file');
+                $new_file->move('mystorage/media/', $old_img_name);
+            }
+
             $saveStatus = $saveData->save();
             if ($saveStatus === true) {
                 return response()->json([
