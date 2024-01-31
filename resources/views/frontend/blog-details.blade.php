@@ -1,8 +1,15 @@
 @extends('frontend.main')
 @section('main-sec')
-
     @push('style')
         <style>
+            .single-post p {
+                font-size: 16px
+            }
+
+            .single-post li {
+                font-size: 16px
+            }
+
             .widget-tags ul>li {
                 float: none;
             }
@@ -257,11 +264,9 @@
                                             </li>
                                         @endforeach
                                     @endif
-
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div> --}}
             </div>
@@ -269,3 +274,4 @@
     </section>
     <!-- 1rd Block Wrapper End -->
 @endsection
+

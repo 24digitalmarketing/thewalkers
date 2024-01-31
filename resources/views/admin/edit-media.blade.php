@@ -34,9 +34,7 @@
                                  <h6 class="text-primary" style="font-size: 16px">Edit Media</h6>
                              </div>
                              <div class="card-body">
-
-                                  
-                                     <form method="POST" id="media-form"
+                                 <form method="POST" id="media-form"
                                      onsubmit="uploadData1('media-form','{{ route('admin.updateMedia', $data[0]->id) }}', 'alert-box', 'btn-box-1', event)"
                                      class="mx-3 p-3" enctype="multipart/form-data">
 
@@ -47,7 +45,6 @@
                                              <embed src="{{ asset('mystorage/media/' . $data[0]->img_name) }}"
                                                  style="height:200px">
                                          </div>
-
                                          <div class="col-12 mb-3">
                                              <label class="form-label">Image</label>
                                              <input type="file" name="file" class="form-control">
@@ -65,7 +62,6 @@
                                                  value="{{ $data[0]->title }}" required>
                                              <p class="form-feedback invalid-feedback" data-name="title"></p>
                                          </div>
-
                                      </div>
                                      <div class="mb-3" id="btn-box-1">
                                          <button class="btn btn-primary" type="submit" name="create"
