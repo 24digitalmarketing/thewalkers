@@ -54,6 +54,16 @@
             .form-control {
                 color: #000;
             }
+
+
+            p[name="tableOfContents"] strong {
+                font-size: 25px;
+                color: #000;
+            }
+
+            div[name="tableOfContents"] a {
+                font-size: 17px;
+            }
         </style>
     @endpush
     <!-- 1rd Block Wrapper Start -->
@@ -274,4 +284,3 @@
     </section>
     <!-- 1rd Block Wrapper End -->
 @endsection
-

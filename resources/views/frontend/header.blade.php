@@ -161,7 +161,7 @@
         <!-- Header End -->
 
         <!-- Main Nav Start -->
-        <div class="utf_main_nav_area clearfix utf_sticky">
+        <div class="utf_main_nav_area clearfix">
             <div class="container">
                 <div class="row">
                     <nav class="navbar navbar-expand-lg col">
