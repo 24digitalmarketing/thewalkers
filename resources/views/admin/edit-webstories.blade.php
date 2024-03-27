@@ -66,6 +66,13 @@
                                 </div>
 
                                 <div class="col-12 mb-3">
+                                    <label class="form-label"> Link </label>
+                                    <input type="url" name="link" value="{{ $data->link }}" class="form-control"
+                                        placeholder="Link">
+                                    <p class="form-feedback invalid-feedback" data-name="link"></p>
+                                </div>
+
+                                <div class="col-12 mb-3">
                                     <label class="form-label">Cover Image<span class="text-danger">*</span></label>
                                     <div class="border border-dashed p-3">
                                         <div class="selected-media-box" id="selected-media-box">
@@ -86,13 +93,13 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-12 mb-3">
                                     <label class="form-label">Media <span class="text-danger">*</span></label>
                                     <div class="border border-dashed p-3">
                                         <div class="selected-media-box" id="selected-media-box2">
                                             <input type="hidden" id="final-selected-media-input2" name="media"
                                                 value="{{ $data->media }}">
-
                                             @php
                                                 $media = json_decode($data->media, true);
                                             @endphp
@@ -112,9 +119,7 @@
                                     </div>
                                 </div>
 
-
                             </div>
-
                             <div class="mb-3" id="btn-box-1">
                                 <button class="btn btn-primary" type="submit" name="create"
                                     style="width:100% ; font-size:15px"> Save </button>
@@ -123,8 +128,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 

@@ -3,9 +3,9 @@
     $cover = json_decode($data->cover, true);
     $cover_img = getMediaUrl($cover[0]['file_id']);
     $media = json_decode($data->media, true);
-    
+    $link = $data->link;
     $id = $data->id;
-    
+
 @endphp
 
 <!doctype html>
@@ -127,6 +127,25 @@
         .next-story-btn .next-story:hover {
             background-color: #ff0000
         }
+
+
+        .read-more {
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+            z-index: 1;
+            text-decoration: none;
+            padding: 5px 25px 8px 25px;
+            border-radius: 20px;
+            background-color: black;
+            display: block;
+        }
+
+        .read-more:hover {
+            background-color: #ff0000
+        }
     </style>
 </head>
 
@@ -139,7 +158,7 @@
         @foreach ($media as $key => $single_media)
             @php
                 $media_img = getMediaUrl($single_media['file_id']);
-                
+
             @endphp
             <amp-story-page auto-advance-after="10s" id="page{{ $key }}">
                 <amp-story-grid-layer template="fill">
@@ -148,23 +167,26 @@
                 </amp-story-grid-layer>
 
                 @php
-                    
+
                     // next story
-                    $next_story = DB::table('webstories')
-                        ->where('id', '>', $id)
-                        ->limit(1)
-                        ->get();
-                    
+                    $next_story = DB::table('webstories')->where('id', '>', $id)->limit(1)->get();
+
                 @endphp
-                @if (count($next_story) > 0)
-                    @if ($key == count($media) - 1)
+                @if ($key == count($media) - 1)
+                    @if (count($next_story) > 0)
                         <amp-story-page-outlink layout="nodisplay">
                             <a href="{{ route('frontend.webstoryView', $next_story[0]->slug) }}" title="Next Story">Next
                                 Story</a>
                         </amp-story-page-outlink>
                     @endif
+                @else
+                    @if (!is_null($link) && $link != '')
+                        <amp-story-page-outlink layout="nodisplay">
+                            <a href="{{ $link }}" title="Know More">Know
+                                More</a>
+                        </amp-story-page-outlink>
+                    @endif
                 @endif
-
             </amp-story-page>
         @endforeach
     </amp-story>

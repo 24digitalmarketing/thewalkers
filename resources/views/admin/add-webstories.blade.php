@@ -62,6 +62,11 @@
                                     <input type="text" name="slug" class="form-control" required placeholder="Slug">
                                     <p class="form-feedback invalid-feedback" data-name="slug"></p>
                                 </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label"> Link </label>
+                                    <input type="url" name="link" class="form-control" placeholder="Link">
+                                    <p class="form-feedback invalid-feedback" data-name="link"></p>
+                                </div>
 
                                 <div class="col-12 mb-3">
                                     <label class="form-label">Cover Image<span class="text-danger">*</span></label>

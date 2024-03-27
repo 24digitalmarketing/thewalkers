@@ -46,7 +46,7 @@ class WebstoriesController extends Controller
             return abort(404, 'Webstory Not Found');
         }
     }
- 
+
     public function index()
     {
 
@@ -77,6 +77,7 @@ class WebstoriesController extends Controller
             $data->media =   $request->media;
             $data->title =   sanitizeInput($request->title);
             $data->slug =    sanitizeInput($request->slug);
+            $data->link =     $request->link;
 
             try {
                 $data->save();
@@ -133,6 +134,7 @@ class WebstoriesController extends Controller
             $data->media =   $request->media;
             $data->title =   sanitizeInput($request->title);
             $data->slug =   $request->slug;
+            $data->link =     $request->link;
 
             try {
                 $data->save();
