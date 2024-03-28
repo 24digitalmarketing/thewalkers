@@ -34,18 +34,18 @@
 
     @endphp
     @if (count($metaData) != 0)
-        <title>{{ $metaData[0]->title }}</title>
-        <meta name="keywords" content="{{ $metaData[0]->keywords }}">
-        <meta name="description" content="{{ $metaData[0]->description }}">
-        <meta property="og:title" content="{{ $metaData[0]->og_title }}" />
-        <meta property="og:description" content="{{ $metaData[0]->og_description }}" />
-        <meta property="og:url" content="{{ $metaData[0]->og_url }}" />
-        <meta property="og:image" content="{{ $metaData[0]->og_image_url }}">
-        <meta name="twitter:title" content="{{ $metaData[0]->twitter_title }}">
-        <meta name="twitter:description" content="{{ $metaData[0]->twitter_des }}">
-        <meta name="twitter:image" content="{{ $metaData[0]->twitter_img_url }}">
-        <meta property="og:type" content="{{ $metaData[0]->page_topic }}" />
-        <link rel="canonical" href="{{ $link }}" />
+        <title>@php echo $metaData[0]->title @endphp</title>
+        <meta name="keywords" content="@php echo $metaData[0]->keywords @endphp">
+        <meta name="description" content="@php echo $metaData[0]->description @endphp">
+        <meta property="og:title" content="@php echo $metaData[0]->og_title @endphp" />
+        <meta property="og:description" content="@php echo $metaData[0]->og_description @endphp" />
+        <meta property="og:url" content="@php echo $metaData[0]->og_url @endphp" />
+        <meta property="og:image" content="@php echo $metaData[0]->og_image_url @endphp">
+        <meta name="twitter:title" content="@php echo $metaData[0]->twitter_title @endphp">
+        <meta name="twitter:description" content="@php echo $metaData[0]->twitter_des @endphp">
+        <meta name="twitter:image" content="@php echo $metaData[0]->twitter_img_url @endphp">
+        <meta property="og:type" content="@php echo $metaData[0]->page_topic @endphp" />
+        <link rel="canonical" href="@php echo $link @endphp" />
     @endif
 
     @php
@@ -150,7 +150,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
                         <div class="logo"> <a href="{{ route('frontend.index') }}" title="Thewalkers">
-                                <img src="{{ asset('assets/images/logo.webp') }}"  alt="Thewalkers"
+                                <img src="{{ asset('assets/images/logo.webp') }}" alt="Thewalkers"
                                     style="max-height: 100px">
                             </a>
                         </div>
@@ -177,9 +177,7 @@
                                     <li> <a href="{{ route('frontend.webstory') }}">Webstories</a> </li>
 
                                     @php
-                                        $head_category = DB::table('blog_category')
-                                            ->orderBy('cat_name', 'asc')
-                                            ->get();
+                                        $head_category = DB::table('blog_category')->orderBy('cat_name', 'asc')->get();
                                     @endphp
                                     @if (count($head_category) > 0)
                                         @foreach ($head_category as $single_head_category)

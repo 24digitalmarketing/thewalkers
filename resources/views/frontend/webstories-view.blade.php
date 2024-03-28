@@ -13,9 +13,83 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{{ $title }}</title>
     <link rel="canonical" href="{{ route('frontend.webstoryView', $data->slug) }}">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    {{-- ------- Dynamic Meta Started ------------  --}}
+    @php
+        // Program to display URL of current page.
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            $link = 'https';
+        } else {
+            $link = 'http';
+        }
+
+        // Here append the common URL characters.
+        $link .= '://';
+
+        // Append the host(domain name, ip) to the URL.
+        $link .= $_SERVER['HTTP_HOST'];
+
+        // Append the requested resource location to the URL
+        $link .= $_SERVER['REQUEST_URI'];
+
+        $metaData = DB::table('meta')
+            ->where('url', '=', "$link")
+            ->get();
+
+    @endphp
+    @if (count($metaData) != 0)
+        <title>@php echo  $metaData[0]->title @endphp</title>
+        <meta name="keywords" content="@php echo  $metaData[0]->keywords @endphp">
+        <meta name="description" content="@php echo  $metaData[0]->description @endphp">
+        <meta property="og:title" content="@php echo  $metaData[0]->og_title @endphp" />
+        <meta property="og:description" content="@php echo  $metaData[0]->og_description @endphp" />
+        <meta property="og:url" content="@php echo  $metaData[0]->og_url @endphp" />
+        <meta property="og:image" content="@php echo  $metaData[0]->og_image_url @endphp">
+        <meta name="twitter:title" content="@php echo  $metaData[0]->twitter_title @endphp">
+        <meta name="twitter:description" content="@php echo  $metaData[0]->twitter_des @endphp">
+        <meta name="twitter:image" content="@php echo  $metaData[0]->twitter_img_url @endphp">
+        <meta property="og:type" content="@php echo  $metaData[0]->page_topic @endphp" />
+    @endif
+
+    @php
+        if (count($metaData) != 0) {
+            echo $metaData[0]->js_schema;
+        }
+    @endphp
+
+
+    <meta property="site_name" content="The Walkers" />
+    <meta property="og:site_name" content="The Walkers" />
+
+    <meta name="domainType" content=".com" />
+    <meta name="Googlebot" content="Index, Follow" />
+    <meta name="YahooSeeker" content="INDEX, FOLLOW" />
+    <meta name="msnbot" content="INDEX, FOLLOW" />
+    <meta name="rating" content="Safe For Kids" />
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="daily" />
+    <meta name="classification" content="Online Betting" />
+    <meta name="distribution" content="Global" />
+    <meta name="copyright" content="Copyright 2023 thewalkers.org - All Rights Reserved" />
+
+    <meta http-equiv='Expires' content='0'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Cache-Control' content='no-cache'>
+    <meta name='fb:page_id' content=''>
+    <meta name="twitter:card" content="summery_large_image" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <meta name="author" content="thewalkers.org">
+    <meta name="publisher" content="thewalkers.org">
+
+    {{-- ------- Dynamic Meta End ------------  --}}
+
+
+
+
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -172,7 +246,13 @@
                     $next_story = DB::table('webstories')->where('id', '>', $id)->limit(1)->get();
 
                 @endphp
-                @if ($key == count($media) - 1)
+                @if (!is_null($link) && $link != '')
+                    <amp-story-page-outlink layout="nodisplay">
+                        <a href="{{ $link }}" title="Know More">Know
+                            More</a>
+                    </amp-story-page-outlink>
+                @endif
+                {{-- @if ($key == count($media) - 1)
                     @if (count($next_story) > 0)
                         <amp-story-page-outlink layout="nodisplay">
                             <a href="{{ route('frontend.webstoryView', $next_story[0]->slug) }}" title="Next Story">Next
@@ -186,7 +266,7 @@
                                 More</a>
                         </amp-story-page-outlink>
                     @endif
-                @endif
+                @endif --}}
             </amp-story-page>
         @endforeach
     </amp-story>

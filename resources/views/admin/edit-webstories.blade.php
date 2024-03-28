@@ -78,11 +78,12 @@
                                         <div class="selected-media-box" id="selected-media-box">
                                             <input type="hidden" id="final-selected-media-input" name="cover"
                                                 value="{{ $data->cover }}">
-
-                                            @php
-                                                $cover = json_decode($data->cover, true);
-                                                echo getMediaFile($cover[0]['file_id']);
-                                            @endphp
+                                            @if ($data->cover != '')
+                                                @php
+                                                    $cover = json_decode($data->cover, true);
+                                                    echo getMediaFile($cover[0]['file_id']);
+                                                @endphp
+                                            @endif
                                         </div>
                                         <div class="d-flex justify-content-center align-items-center mt-2">
                                             <a style="background-color: transparent" href="javascript:;"
@@ -100,6 +101,7 @@
                                         <div class="selected-media-box" id="selected-media-box2">
                                             <input type="hidden" id="final-selected-media-input2" name="media"
                                                 value="{{ $data->media }}">
+
                                             @php
                                                 $media = json_decode($data->media, true);
                                             @endphp
@@ -108,6 +110,7 @@
                                                     echo getMediaFile($single_media['file_id']);
                                                 @endphp
                                             @endforeach
+
                                         </div>
                                         <div class="d-flex justify-content-center align-items-center mt-2">
                                             <a style="background-color: transparent" href="javascript:;"
