@@ -43,6 +43,12 @@
                                             @csrf
                                             <div id="alert-box"></div>
                                             <div class="mb-3">
+                                                <label for="academic-session" class="form-label">Title</label>
+                                                <input type="text" name="title" class="form-control" required
+                                                    placeholder="Title" value=" {{ $data[0]->title }}">
+                                                <p class="form-feedback invalid-feedback" data-name="title"></p>
+                                            </div>
+                                            <div class="mb-3">
                                                 <label for="academic-session" class="form-label">Category Name</label>
                                                 <input type="text" name="category_name" class="form-control" required
                                                     placeholder="Category Name" value=" {{ $data[0]->cat_name }}">

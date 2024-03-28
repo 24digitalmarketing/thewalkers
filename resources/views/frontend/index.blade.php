@@ -5,7 +5,7 @@
         @php
             $section_1_data = json_decode($section1->data, true);
             $sec_1_slider = $section_1_data['blogCheckbox'];
-            
+
             $sliderSectionItem1 = $section_1_data['sliderSectionItem1'];
             $sliderSectionItem2 = $section_1_data['sliderSectionItem2'];
         @endphp
@@ -108,12 +108,10 @@
 
     <section class="web-stories-container">
         <div class="container">
+            <h1>Insightful Blog Posts from the USA: Welcome to The Walkers</h1>
             <div class="row">
                 @php
-                    $webdata = DB::table('webstories')
-                        ->limit(15)
-                        ->orderBy('id', 'desc')
-                        ->get();
+                    $webdata = DB::table('webstories')->limit(15)->orderBy('id', 'desc')->get();
                 @endphp
 
                 @if (count($webdata) > 0)
@@ -130,8 +128,8 @@
                                             <span class="web-story-icon">
                                                 <svg width="43.087" height="38.762" viewBox="0 0 43.087 38.762">
                                                     <defs>
-                                                        <filter id="Rectangle_9411" x="6.921" y="0"
-                                                            width="29.246" height="38.762" filterUnits="userSpaceOnUse">
+                                                        <filter id="Rectangle_9411" x="6.921" y="0" width="29.246"
+                                                            height="38.762" filterUnits="userSpaceOnUse">
                                                             <feOffset dy="3" input="SourceAlpha"></feOffset>
                                                             <feGaussianBlur stdDeviation="3" result="blur">
                                                             </feGaussianBlur>
@@ -139,8 +137,8 @@
                                                             <feComposite operator="in" in2="blur"></feComposite>
                                                             <feComposite in="SourceGraphic"></feComposite>
                                                         </filter>
-                                                        <filter id="Rectangle_9412" x="19.897" y="1.73"
-                                                            width="19.73" height="35.302" filterUnits="userSpaceOnUse">
+                                                        <filter id="Rectangle_9412" x="19.897" y="1.73" width="19.73"
+                                                            height="35.302" filterUnits="userSpaceOnUse">
                                                             <feOffset dy="3" input="SourceAlpha"></feOffset>
                                                             <feGaussianBlur stdDeviation="3" result="blur-2">
                                                             </feGaussianBlur>
@@ -148,8 +146,8 @@
                                                             <feComposite operator="in" in2="blur-2"></feComposite>
                                                             <feComposite in="SourceGraphic"></feComposite>
                                                         </filter>
-                                                        <filter id="Rectangle_9413" x="3.46" y="1.73"
-                                                            width="19.73" height="35.302" filterUnits="userSpaceOnUse">
+                                                        <filter id="Rectangle_9413" x="3.46" y="1.73" width="19.73"
+                                                            height="35.302" filterUnits="userSpaceOnUse">
                                                             <feOffset dy="3" input="SourceAlpha"></feOffset>
                                                             <feGaussianBlur stdDeviation="3" result="blur-3">
                                                             </feGaussianBlur>
@@ -157,8 +155,8 @@
                                                             <feComposite operator="in" in2="blur-3"></feComposite>
                                                             <feComposite in="SourceGraphic"></feComposite>
                                                         </filter>
-                                                        <filter id="Rectangle_9414" x="0" y="3.46"
-                                                            width="19.73" height="30.976" filterUnits="userSpaceOnUse">
+                                                        <filter id="Rectangle_9414" x="0" y="3.46" width="19.73"
+                                                            height="30.976" filterUnits="userSpaceOnUse">
                                                             <feOffset dy="3" input="SourceAlpha"></feOffset>
                                                             <feGaussianBlur stdDeviation="3" result="blur-4">
                                                             </feGaussianBlur>
@@ -166,8 +164,8 @@
                                                             <feComposite operator="in" in2="blur-4"></feComposite>
                                                             <feComposite in="SourceGraphic"></feComposite>
                                                         </filter>
-                                                        <filter id="Rectangle_9415" x="23.357" y="3.46"
-                                                            width="19.73" height="30.976" filterUnits="userSpaceOnUse">
+                                                        <filter id="Rectangle_9415" x="23.357" y="3.46" width="19.73"
+                                                            height="30.976" filterUnits="userSpaceOnUse">
                                                             <feOffset dy="3" input="SourceAlpha"></feOffset>
                                                             <feGaussianBlur stdDeviation="3" result="blur-5">
                                                             </feGaussianBlur>
@@ -271,7 +269,9 @@
 
                                     {{-- first media  --}}
                                     @php
-                                        $section2_category1_blog_data_first_media = getMediaUrl($section2_category1_blog_data[0]->main_pic);
+                                        $section2_category1_blog_data_first_media = getMediaUrl(
+                                            $section2_category1_blog_data[0]->main_pic,
+                                        );
                                     @endphp
                                     <div class="utf_post_overaly_style clearfix">
                                         <div class="utf_post_thumb"> <img class="img-fluid"
@@ -297,7 +297,9 @@
                                             @for ($i = 1; $i < count($section2_category1_blog_data); $i++)
                                                 @php
                                                     // media
-                                                    $section2_category1_blog_data_list_media = getMediaUrl($section2_category1_blog_data[$i]->main_pic);
+                                                    $section2_category1_blog_data_list_media = getMediaUrl(
+                                                        $section2_category1_blog_data[$i]->main_pic,
+                                                    );
                                                 @endphp
                                                 <li class="clearfix">
                                                     <div class="utf_post_block_style post-float clearfix">
@@ -347,7 +349,9 @@
 
                                     {{-- first media  --}}
                                     @php
-                                        $section2_category2_blog_data_first_media = getMediaUrl($section2_category2_blog_data[0]->main_pic);
+                                        $section2_category2_blog_data_first_media = getMediaUrl(
+                                            $section2_category2_blog_data[0]->main_pic,
+                                        );
                                     @endphp
                                     <div class="utf_post_overaly_style clearfix">
                                         <div class="utf_post_thumb"> <img class="img-fluid"
@@ -373,7 +377,9 @@
                                             @for ($i = 1; $i < count($section2_category2_blog_data); $i++)
                                                 @php
                                                     // media
-                                                    $section2_category2_blog_data_list_media = getMediaUrl($section2_category2_blog_data[$i]->main_pic);
+                                                    $section2_category2_blog_data_list_media = getMediaUrl(
+                                                        $section2_category2_blog_data[$i]->main_pic,
+                                                    );
                                                 @endphp
                                                 <li class="clearfix">
                                                     <div class="utf_post_block_style post-float clearfix">
@@ -424,7 +430,9 @@
 
                                     {{-- first media  --}}
                                     @php
-                                        $section2_category3_blog_data_first_media = getMediaUrl($section2_category3_blog_data[0]->main_pic);
+                                        $section2_category3_blog_data_first_media = getMediaUrl(
+                                            $section2_category3_blog_data[0]->main_pic,
+                                        );
                                     @endphp
                                     <div class="utf_post_overaly_style clearfix">
                                         <div class="utf_post_thumb"> <img class="img-fluid"
@@ -450,7 +458,9 @@
                                             @for ($i = 1; $i < count($section2_category3_blog_data); $i++)
                                                 @php
                                                     // media
-                                                    $section2_category3_blog_data_list_media = getMediaUrl($section2_category3_blog_data[$i]->main_pic);
+                                                    $section2_category3_blog_data_list_media = getMediaUrl(
+                                                        $section2_category3_blog_data[$i]->main_pic,
+                                                    );
                                                 @endphp
                                                 <li class="clearfix">
                                                     <div class="utf_post_block_style post-float clearfix">

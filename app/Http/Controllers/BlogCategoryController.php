@@ -18,7 +18,8 @@ class BlogCategoryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'category_name' => 'required',
-            'slug' => 'required|unique:blog_category,slug'
+            'slug' => 'required|unique:blog_category,slug',
+            'title' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -43,6 +44,7 @@ class BlogCategoryController extends Controller
                 $data->cat_id =  uid_generator();
                 $data->cat_name = strtolower(trim($request->category_name));
                 $data->slug = strtolower(trim($request->slug));
+                $data->title = trim($request->title);
 
                 $save_status = $data->save();
 
@@ -75,7 +77,8 @@ class BlogCategoryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'category_name' => 'required',
-            'slug' => "required|unique:blog_category,slug,$id"
+            'slug' => "required|unique:blog_category,slug,$id",
+            'title' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -90,6 +93,7 @@ class BlogCategoryController extends Controller
 
             $data[0]->cat_name = strtolower(trim($request->category_name));
             $data[0]->slug = strtolower(trim($request->slug));
+            $data[0]->title =  trim($request->title);
 
             $save_status = $data[0]->save();
 

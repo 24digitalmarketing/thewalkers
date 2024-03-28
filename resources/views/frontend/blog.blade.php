@@ -21,6 +21,16 @@
                                 <div class="col-12">
                                     <h3 class="utf_block_title"><span>{{ getBlogCategoryName($blogData[0]->cat_id) }}</span>
                                     </h3>
+                                    <h1 class="pb-2">
+                                        @php
+                                            $category_data = DB::table('blog_category')
+                                                ->where('cat_id', '=', $blogData[0]->cat_id)
+                                                ->get();
+                                        @endphp
+                                        @if (count($category_data) > 0)
+                                            {{ $category_data[0]->title }}
+                                        @endif
+                                    </h1>
                                 </div>
                                 @foreach ($blogData as $single_blog)
                                     @php
@@ -67,9 +77,7 @@
                             <h3 class="utf_block_title"><span>Category</span></h3>
                             <ul class="unstyled clearfix">
                                 @php
-                                    $category = DB::table('blog_category')
-                                        ->orderBy('cat_name', 'asc')
-                                        ->get();
+                                    $category = DB::table('blog_category')->orderBy('cat_name', 'asc')->get();
                                 @endphp
                                 @if (count($category) > 0)
                                     @foreach ($category as $single_category)

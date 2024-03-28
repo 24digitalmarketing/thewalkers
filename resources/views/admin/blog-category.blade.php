@@ -43,13 +43,19 @@
                                             @csrf
                                             <div id="alert-box"></div>
                                             <div class="mb-3">
-                                                <label for="academic-session" class="form-label">Category Name</label>
+                                                <label class="form-label">Title</label>
+                                                <input type="text" name="title" class="form-control" required
+                                                    placeholder="Title">
+                                                <p class="form-feedback invalid-feedback" data-name="title"></p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Category Name</label>
                                                 <input type="text" name="category_name" class="form-control" required
                                                     placeholder="Category Name">
                                                 <p class="form-feedback invalid-feedback" data-name="category_name"></p>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="academic-session" class="form-label">Category Slug</label>
+                                                <label class="form-label">Category Slug</label>
                                                 <input type="text" name="slug" class="form-control" required
                                                     placeholder="Slug">
                                                 <p class="form-feedback invalid-feedback" data-name="slug"></p>
@@ -84,6 +90,7 @@
                                         <thead class="bg-light border-0">
                                             <tr>
                                                 <th class="sort text-nowrap"> Category Id</th>
+                                                <th class="sort text-nowrap"> Title</th>
                                                 <th class="sort text-nowrap"> Category Name</th>
                                                 <th class="sort text-nowrap">Slug</th>
                                                 <th class="sort text-nowrap">Updated At</th>
@@ -95,6 +102,7 @@
                                             @foreach ($data as $single_data)
                                                 <tr>
                                                     <td>{{ $single_data->cat_id }}</td>
+                                                    <td>{{ $single_data->title }}</td>
                                                     <td>{{ $single_data->cat_name }}</td>
                                                     <td>{{ $single_data->slug }}</td>
                                                     <td>{{ showDateTime($single_data->created_at) }}</td>
