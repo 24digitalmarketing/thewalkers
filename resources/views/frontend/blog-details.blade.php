@@ -76,7 +76,9 @@
                         <div class="utf_post_title-area"> <a class="utf_post_cat"
                                 href="#">{{ getBlogCategoryName($blogData->cat_id) }}</a>
                             <h1 class="utf_post_title"> {{ $blogData->title }}</h1>
-                            <div class="utf_post_meta"> <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                            <div class="utf_post_meta"> <span class="utf_post_date">
+                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20"
+                                        height="20">
                                     {{ showDateTime($blogData->created_at) }}</span> </div>
                         </div>
                         @php
@@ -112,7 +114,8 @@
                         @endif
                         @if ($next_prev['next'] != 0)
                             <div class="post-next">
-                                <a href="{{ $next_prev['next'] }}"> <span>Next Post <i class="fa fa-angle-right"></i></span>
+                                <a href="{{ $next_prev['next'] }}"> <span>Next Post <i
+                                            class="fa fa-angle-right"></i></span>
                                     <h3>{{ $next_prev['nextTitle'] }}</h3>
                                 </a>
                             </div>
@@ -153,8 +156,9 @@
                                                         <h2 class="utf_post_title title-medium"> <a
                                                                 href="{{ route('frontend.blogDetails', $relatedBlogData->slug) }}">
                                                                 {{ $relatedBlogData->title }}</a> </h2>
-                                                        <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                                    class="fa fa-clock-o"></i>
+                                                        <div class="utf_post_meta"> <span class="utf_post_date">
+                                                                <img src="{{ asset('assets/images/icons/clock.svg') }}"
+                                                                    alt="clock icon" width="20" height="20">
                                                                 {{ showDateTime($relatedBlogData->created_at) }}</span>
                                                         </div>
                                                     </div>
@@ -222,63 +226,6 @@
                     <!-- Comments form end -->
                 </div>
 
-                {{-- <div class="col-lg-4 col-md-12">
-                    <div class="sidebar utf_sidebar_right">
-
-                        <div class="widget widget-tags">
-                            <strong class="utf_block_title"><span>Category</span></strong>
-                            <ul class="unstyled clearfix">
-                                @php
-                                    $category = DB::table('blog_category')
-                                        ->orderBy('cat_name', 'asc')
-                                        ->get();
-                                @endphp
-                                @if (count($category) > 0)
-                                    @foreach ($category as $single_category)
-                                        <li><a href="{{ route('frontend.blogCategory', $single_category->slug) }}">
-                                                {{ $single_category->cat_name }}</a></li>
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </div>
-                        <div class="widget color-default">
-                            <h3 class="utf_block_title"><span>Popular News</span></h3>
-                            <div class="utf_list_post_block">
-                                <ul class="utf_list_post">
-
-                                    @if (count($popularBlogData) > 0)
-                                        @foreach ($popularBlogData as $single_popular)
-                                            @php
-                                                // media
-                                                $popular_media = getMediaUrl($single_popular->main_pic);
-                                            @endphp
-                                            <li class="clearfix">
-                                                <div class="utf_post_block_style post-float clearfix">
-                                                    <div class="utf_post_thumb"> <img class="img-fluid"
-                                                            src="{{ $popular_media['src'] }}"
-                                                            alt="{{ $popular_media['alt'] }}"
-                                                            title="{{ $popular_media['title'] }}" />
-                                                        <a class="utf_post_cat"
-                                                            href="#">{{ getBlogCategoryName($single_popular->cat_id) }}</a>
-                                                    </div>
-                                                    <div class="utf_post_content">
-                                                        <h2 class="utf_post_title title-small"> <a
-                                                                href="{{ route('frontend.blogDetails', $single_popular->slug) }}">{{ $single_popular->title }}</a>
-                                                        </h2>
-                                                        <div class="utf_post_meta">
-                                                            <span class="utf_post_date"><i
-                                                                    class="fa fa-clock-o"></i>{{ showDateTime($single_popular->created_at) }}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    @endif
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>

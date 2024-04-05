@@ -87,21 +87,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/colorbox.css') }}">
 
     <!-- Google Fonts -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800&amp;display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800&amp;display=swap"
-        rel="stylesheet">
 
     @stack('style')
 
@@ -111,38 +100,6 @@
 <body>
 
     <div class="body-inner">
-        <!-- Topbar Start -->
-        {{-- <div id="top-bar" class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <ul class="unstyled top-nav">
-                            <li class="mx-2"><i class="fa fa-map-marker"></i> Lorem ipsum dolor sit
-                            </li>
-                            <li class="mx-2"><i class="fa fa-phone"></i> +91123456789
-                            </li>
-                            <li class="mx-2"><i class="fa fa-envelope"></i> example@gmail.com
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 top-social text-lg-right text-md-center">
-                        <ul class="unstyled">
-                            <li> <a title="Facebook" href="#"> <span class="social-icon"><i
-                                            class="fa fa-facebook"></i></span> </a> <a title="Twitter"
-                                    href="#"> <span class="social-icon"><i class="fa fa-twitter"></i></span>
-                                </a> <a title="Google+" href="#"> <span class="social-icon"><i
-                                            class="fa fa-google-plus"></i></span> </a> <a title="Linkdin"
-                                    href="#"> <span class="social-icon"><i class="fa fa-linkedin"></i></span>
-                                </a> <a title="Rss" href="#"> <span class="social-icon"><i
-                                            class="fa fa-rss"></i></span> </a> <a title="Skype" href="#">
-                                    <span class="social-icon"><i class="fa fa-skype"></i></span> </a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- Topbar End -->
-
 
         <!-- Header start -->
         <header id="header" class="header">
@@ -150,8 +107,8 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
                         <div class="logo"> <a href="{{ route('frontend.index') }}" title="Thewalkers">
-                                <img src="{{ asset('assets/images/logo.webp') }}" title="Thewalkers logo" alt="Thewalkers"
-                                    style="max-height: 100px">
+                                <img src="{{ asset('assets/images/logo.webp') }}" title="Thewalkers logo"
+                                    alt="Thewalkers" style="max-height: 100px">
                             </a>
                         </div>
                     </div>

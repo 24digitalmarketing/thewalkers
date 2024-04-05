@@ -57,10 +57,10 @@ Route::controller(BlogController::class)->name('frontend.')->group(function () {
     Route::get('/blog/category/{slug}', 'blogCategory')->name('blogCategory');
 });
 
-Route::controller(ContactController::class)->name('frontend.')->group(function () {
-    Route::get('/contact', 'index')->name('contact');
-    Route::post('/contact', 'save')->name('contact-save');
-});
+// Route::controller(ContactController::class)->name('frontend.')->group(function () {
+//     // Route::get('/contact', 'index')->name('contact');
+//     Route::post('/contact', 'save')->name('contact-save');
+// });
 
 
 Route::controller(BlogCommentController::class)->name('frontend.')->group(function () {

@@ -37,7 +37,8 @@
                                                         href="{{ route('frontend.blogDetails', $sec_1_slider_data->slug) }}">{{ $sec_1_slider_data->title }}</a>
                                                 </h2>
 
-                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                                <span class="utf_post_date">
+                                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                     {{ showDateTime($sec_1_slider_data->created_at) }} </span>
                                             </div>
                                         </div>
@@ -66,8 +67,8 @@
                                                 href="{{ route('frontend.blogDetails', $sliderSectionItem1_blog_data->slug) }}">{{ $sliderSectionItem1_blog_data->title }}
                                             </a>
                                         </h2>
-                                        <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                    class="fa fa-clock-o"></i>
+                                        <div class="utf_post_meta"> <span class="utf_post_date"> 
+                                            <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                 {{ showDateTime($sliderSectionItem1_blog_data->created_at) }}</span> </div>
                                     </div>
                                 </div>
@@ -91,8 +92,7 @@
                                                 href="{{ route('frontend.blogDetails', $sliderSectionItem2_blog_data->slug) }}">{{ $sliderSectionItem2_blog_data->title }}
                                             </a>
                                         </h2>
-                                        <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                    class="fa fa-clock-o"></i>
+                                        <div class="utf_post_meta"> <span class="utf_post_date"> <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                 {{ showDateTime($sliderSectionItem2_blog_data->created_at) }}</span> </div>
                                     </div>
                                 </div>
@@ -285,8 +285,8 @@
                                                     href="{{ route('frontend.blogDetails', $section2_category1_blog_data[0]->slug) }}">
                                                     {{ $section2_category1_blog_data[0]->title }}</a>
                                             </h2>
-                                            <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                        class="fa fa-clock-o"></i>
+                                            <div class="utf_post_meta"> <span class="utf_post_date">
+                                                <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                     {{ showDateTime($section2_category1_blog_data[0]->created_at) }}</span>
                                             </div>
                                         </div>
@@ -314,7 +314,8 @@
                                                                     {{ $section2_category1_blog_data[$i]->title }} </a>
                                                             </h2>
                                                             <div class="utf_post_meta">
-                                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                                                <span class="utf_post_date"> 
+                                                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                                     {{ showDateTime($section2_category1_blog_data[$i]->created_at) }}</span>
                                                             </div>
                                                         </div>
@@ -365,8 +366,8 @@
                                                     href="{{ route('frontend.blogDetails', $section2_category2_blog_data[0]->slug) }}">
                                                     {{ $section2_category2_blog_data[0]->title }}</a>
                                             </h2>
-                                            <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                        class="fa fa-clock-o"></i>
+                                            <div class="utf_post_meta"> <span class="utf_post_date"> 
+                                                <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                     {{ showDateTime($section2_category2_blog_data[0]->created_at) }}</span>
                                             </div>
                                         </div>
@@ -394,7 +395,9 @@
                                                                     {{ $section2_category2_blog_data[$i]->title }} </a>
                                                             </h2>
                                                             <div class="utf_post_meta">
-                                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                                                <span class="utf_post_date">
+                                                                    
+                                                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                                     {{ showDateTime($section2_category2_blog_data[$i]->created_at) }}</span>
                                                             </div>
                                                         </div>
@@ -446,8 +449,8 @@
                                                     href="{{ route('frontend.blogDetails', $section2_category3_blog_data[0]->slug) }}">
                                                     {{ $section2_category3_blog_data[0]->title }}</a>
                                             </h2>
-                                            <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                        class="fa fa-clock-o"></i>
+                                            <div class="utf_post_meta"> <span class="utf_post_date">
+                                                <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                     {{ showDateTime($section2_category3_blog_data[0]->created_at) }}</span>
                                             </div>
                                         </div>
@@ -475,7 +478,8 @@
                                                                     {{ $section2_category3_blog_data[$i]->title }} </a>
                                                             </h2>
                                                             <div class="utf_post_meta">
-                                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                                                <span class="utf_post_date">
+                                                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                                     {{ showDateTime($section2_category3_blog_data[$i]->created_at) }}</span>
                                                             </div>
                                                         </div>
@@ -530,7 +534,8 @@
                                 <h2 class="utf_post_title"> <a
                                         href="{{ route('frontend.blogDetails', $section3_blog_1_data->slug) }}">{{ $section3_blog_1_data->title }}</a>
                                 </h2>
-                                <div class="utf_post_meta"> <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                <div class="utf_post_meta"> <span class="utf_post_date">
+                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                         {{ showDateTime($section3_blog_1_data->created_at) }}</span>
                                 </div>
                             </div>
@@ -553,7 +558,8 @@
                                 <h2 class="utf_post_title"> <a
                                         href="{{ route('frontend.blogDetails', $section3_blog_2_data->slug) }}">{{ $section3_blog_2_data->title }}</a>
                                 </h2>
-                                <div class="utf_post_meta"> <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                <div class="utf_post_meta"> <span class="utf_post_date">
+                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                         {{ showDateTime($section3_blog_2_data->created_at) }}</span>
                                 </div>
                             </div>
@@ -578,7 +584,8 @@
                                 <h2 class="utf_post_title"> <a
                                         href="{{ route('frontend.blogDetails', $section3_blog_3_data->slug) }}">{{ $section3_blog_3_data->title }}</a>
                                 </h2>
-                                <div class="utf_post_meta"> <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                <div class="utf_post_meta"> <span class="utf_post_date">
+                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                         {{ showDateTime($section3_blog_3_data->created_at) }}</span>
                                 </div>
                             </div>
@@ -639,7 +646,8 @@
                                         href="{{ route('frontend.blogDetails', $section4_blog_data->slug) }}">
                                         {{ $section4_blog_data->title }}</a> </h2>
                                 <div class="utf_post_meta">
-                                    <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                    <span class="utf_post_date">
+                                        <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                         {{ showDateTime($section4_blog_data->created_at) }}</span>
                                 </div>
                                 <p>{{ $section4_blog_data->short_des }}</p>
@@ -687,8 +695,8 @@
                                                 href="{{ route('frontend.blogDetails', $section5_single_blog_data->slug) }}">
                                                 {{ $section5_single_blog_data->title }}</a>
                                         </h2>
-                                        <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                    class="fa fa-clock-o"></i>
+                                        <div class="utf_post_meta"> <span class="utf_post_date">
+                                            <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                 {{ showDateTime($section5_single_blog_data->created_at) }}</span> </div>
                                     </div>
                                 </div>
@@ -721,7 +729,8 @@
                                                         href="{{ route('frontend.blogDetails', $section5_single_blog_data->slug) }}">{{ $section5_single_blog_data->title }}</a>
                                                 </h2>
                                                 <div class="utf_post_meta">
-                                                    <span class="utf_post_date"><i class="fa fa-clock-o"></i>
+                                                    <span class="utf_post_date">
+                                                        <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                         {{ showDateTime($section5_single_blog_data->created_at) }}</span>
                                                 </div>
                                             </div>

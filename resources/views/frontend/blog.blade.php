@@ -49,8 +49,8 @@
                                                 <h2 class="utf_post_title title-large"> <a
                                                         href="{{ route('frontend.blogDetails', $single_blog->slug) }}">{{ $single_blog->title }}</a>
                                                 </h2>
-                                                <div class="utf_post_meta"> <span class="utf_post_date"><i
-                                                            class="fa fa-clock-o"></i>
+                                                <div class="utf_post_meta"> <span class="utf_post_date">
+                                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
                                                         {{ showDateTime($single_blog->created_at) }}</span> </div>
                                                 <p> {{ $single_blog->short_des }}
                                                 </p>
@@ -112,8 +112,9 @@
                                                                 href="{{ route('frontend.blogDetails', $single_popular->slug) }}">{{ $single_popular->title }}</a>
                                                         </h2>
                                                         <div class="utf_post_meta">
-                                                            <span class="utf_post_date"><i
-                                                                    class="fa fa-clock-o"></i>{{ showDateTime($single_popular->created_at) }}</span>
+                                                            <span class="utf_post_date">
+                                                                <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
+                                                                {{ showDateTime($single_popular->created_at) }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
