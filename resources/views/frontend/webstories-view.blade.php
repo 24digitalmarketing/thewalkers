@@ -3,7 +3,7 @@
     $cover = json_decode($data->cover, true);
     $cover_img = getMediaUrl($cover[0]['file_id']);
     $media = json_decode($data->media, true);
-    $link = $data->link;
+    $web_link = $data->link;
     $id = $data->id;
 
 @endphp
@@ -69,14 +69,10 @@
     <meta name="msnbot" content="INDEX, FOLLOW" />
     <meta name="rating" content="Safe For Kids" />
     <meta name="robots" content="all" />
-    <meta name="revisit-after" content="daily" />
     <meta name="classification" content="Online Betting" />
     <meta name="distribution" content="Global" />
     <meta name="copyright" content="Copyright 2023 thewalkers.org - All Rights Reserved" />
 
-    <meta http-equiv='Expires' content='0'>
-    <meta http-equiv='Pragma' content='no-cache'>
-    <meta http-equiv='Cache-Control' content='no-cache'>
     <meta name='fb:page_id' content=''>
     <meta name="twitter:card" content="summery_large_image" />
     <meta name="twitter:site" content="" />
@@ -246,9 +242,9 @@
                     $next_story = DB::table('webstories')->where('id', '>', $id)->limit(1)->get();
 
                 @endphp
-                @if (!is_null($link) && $link != '')
+                @if (!is_null($web_link) && $web_link != '')
                     <amp-story-page-outlink layout="nodisplay">
-                        <a href="{{ $link }}" title="Know More">Know
+                        <a href="{{ $web_link }}" title="Know More">Know
                             More</a>
                     </amp-story-page-outlink>
                 @endif

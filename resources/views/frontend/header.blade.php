@@ -150,7 +150,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
                         <div class="logo"> <a href="{{ route('frontend.index') }}" title="Thewalkers">
-                                <img src="{{ asset('assets/images/logo.webp') }}" alt="Thewalkers"
+                                <img src="{{ asset('assets/images/logo.webp') }}" title="Thewalkers logo" alt="Thewalkers"
                                     style="max-height: 100px">
                             </a>
                         </div>
