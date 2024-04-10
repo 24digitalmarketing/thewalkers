@@ -65,7 +65,7 @@
     <meta name="rating" content="Safe For Kids" />
     <meta name="robots" content="all" />
     <meta name="revisit-after" content="daily" />
-    <meta name="classification" content="Online Betting" />
+    <meta name="classification" content="Blogs" />
     <meta name="distribution" content="Global" />
     <meta name="copyright" content="Copyright 2023 thewalkers.org - All Rights Reserved" />
 
