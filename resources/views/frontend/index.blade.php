@@ -608,7 +608,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="utf_more_news block color-default">
-                        <h3 class="utf_block_title"><span>View More News</span></h3>
+                        <h3 class="utf_block_title"><span>View More</span></h3>
 
                         @if (!is_null($section4))
                             <div id="utf_more_news_slide" class="owl-carousel owl-theme utf_more_news_slide">
@@ -668,7 +668,7 @@
             @if (!is_null($section5))
                 <div class="sidebar utf_sidebar_right">
                     <div class="widget color-default">
-                        <h3 class="utf_block_title"><span>Popular News</span></h3>
+                        <h3 class="utf_block_title"><span>Popular Blogs</span></h3>
 
 
                         @php

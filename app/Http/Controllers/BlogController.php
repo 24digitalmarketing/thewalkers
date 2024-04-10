@@ -27,8 +27,11 @@ class BlogController extends Controller
             ['popular', '=', '1']
         ])->orderBy('id', 'desc')->get();
 
+
+        $cat_id = null;
+
         if (!is_null($blogData)) {
-            return view('frontend.blog')->with(compact('blogData', 'popularBlogData'));
+            return view('frontend.blog')->with(compact('blogData', 'popularBlogData','cat_id'));
         } else {
             abort(404, 'Data not found');
         }
@@ -74,7 +77,7 @@ class BlogController extends Controller
             ])->orderBy('id', 'desc')->get();
 
             if (!is_null($blogData)) {
-                return view('frontend.blog')->with(compact('blogData', 'popularBlogData'));
+                return view('frontend.blog')->with(compact('blogData', 'popularBlogData','cat_id'));
             } else {
                 abort(404, 'Data not found');
             }

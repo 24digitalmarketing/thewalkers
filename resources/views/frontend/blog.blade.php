@@ -19,18 +19,24 @@
 
                             @if (count($blogData) > 0)
                                 <div class="col-12">
-                                    <h3 class="utf_block_title"><span>{{ getBlogCategoryName($blogData[0]->cat_id) }}</span>
-                                    </h3>
-                                    <h1 class="pb-2">
-                                        @php
-                                            $category_data = DB::table('blog_category')
-                                                ->where('cat_id', '=', $blogData[0]->cat_id)
-                                                ->get();
-                                        @endphp
-                                        @if (count($category_data) > 0)
-                                            {{ $category_data[0]->title }}
-                                        @endif
-                                    </h1>
+                                    {{-- <h3 class="utf_block_title"><span>{{ getBlogCategoryName($blogData[0]->cat_id) }}</span>
+                                    </h3> --}}
+                                    @if ($cat_id != null)
+                                        <h1 class="pb-2">
+                                            @php
+                                                $category_data = DB::table('blog_category')
+                                                    ->where('cat_id', '=', $cat_id)
+                                                    ->get();
+                                            @endphp
+                                            @if (count($category_data) > 0)
+                                                {{ $category_data[0]->title }}
+                                            @endif
+                                        </h1>
+                                    @else
+                                        <h1>
+                                            Most popular Blogs in the U.S
+                                        </h1>
+                                    @endif
                                 </div>
                                 @foreach ($blogData as $single_blog)
                                     @php
@@ -50,7 +56,8 @@
                                                         href="{{ route('frontend.blogDetails', $single_blog->slug) }}">{{ $single_blog->title }}</a>
                                                 </h2>
                                                 <div class="utf_post_meta"> <span class="utf_post_date">
-                                                    <img src="{{ asset('assets/images/icons/clock.svg') }}" alt="clock icon" width="20" height="20">
+                                                        <img src="{{ asset('assets/images/icons/clock.svg') }}"
+                                                            alt="clock icon" width="20" height="20">
                                                         {{ showDateTime($single_blog->created_at) }}</span> </div>
                                                 <p> {{ $single_blog->short_des }}
                                                 </p>
@@ -87,8 +94,8 @@
                                 @endif
                             </ul>
                         </div>
-                        <div class="widget color-default">
-                            <h3 class="utf_block_title"><span>Popular News</span></h3>
+                        {{-- <div class="widget color-default">
+                            <h3 class="utf_block_title"><span>Popular Blogs</span></h3>
                             <div class="utf_list_post_block">
                                 <ul class="utf_list_post">
 
@@ -124,7 +131,7 @@
 
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
